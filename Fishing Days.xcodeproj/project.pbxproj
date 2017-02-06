@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65361D451E3C73ED0071388E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65361D441E3C73ED0071388E /* HomeViewController.swift */; };
 		653D08621E375AC200845DCC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D08611E375AC200845DCC /* Extension.swift */; };
 		6571574D1E36FAA400391D4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571574C1E36FAA400391D4F /* AppDelegate.swift */; };
-		6571574F1E36FAA400391D4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571574E1E36FAA400391D4F /* ViewController.swift */; };
 		657157521E36FAA400391D4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657157501E36FAA400391D4F /* Main.storyboard */; };
 		657157541E36FAA400391D4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657157531E36FAA400391D4F /* Assets.xcassets */; };
 		657157571E36FAA400391D4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657157551E36FAA400391D4F /* LaunchScreen.storyboard */; };
@@ -36,10 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65361D441E3C73ED0071388E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		653D08611E375AC200845DCC /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		657157491E36FAA400391D4F /* Fishing Days.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fishing Days.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6571574C1E36FAA400391D4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6571574E1E36FAA400391D4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		657157511E36FAA400391D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		657157531E36FAA400391D4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		657157561E36FAA400391D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,9 +103,9 @@
 			children = (
 				6571574C1E36FAA400391D4F /* AppDelegate.swift */,
 				653D08611E375AC200845DCC /* Extension.swift */,
-				6571574E1E36FAA400391D4F /* ViewController.swift */,
 				6571577A1E36FD0F00391D4F /* Day.swift */,
 				657157501E36FAA400391D4F /* Main.storyboard */,
+				65361D441E3C73ED0071388E /* HomeViewController.swift */,
 				657157531E36FAA400391D4F /* Assets.xcassets */,
 				657157551E36FAA400391D4F /* LaunchScreen.storyboard */,
 				657157581E36FAA400391D4F /* Info.plist */,
@@ -265,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6571574F1E36FAA400391D4F /* ViewController.swift in Sources */,
+				65361D451E3C73ED0071388E /* HomeViewController.swift in Sources */,
 				6571574D1E36FAA400391D4F /* AppDelegate.swift in Sources */,
 				6571577B1E36FD0F00391D4F /* Day.swift in Sources */,
 				653D08621E375AC200845DCC /* Extension.swift in Sources */,
@@ -422,7 +422,7 @@
 				DEVELOPMENT_TEAM = AQ934CZ8Q4;
 				INFOPLIST_FILE = "Fishing Days/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jerry-Chou.Fishing-Days";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jerrychou.fish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -436,7 +436,7 @@
 				DEVELOPMENT_TEAM = AQ934CZ8Q4;
 				INFOPLIST_FILE = "Fishing Days/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jerry-Chou.Fishing-Days";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jerrychou.fish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

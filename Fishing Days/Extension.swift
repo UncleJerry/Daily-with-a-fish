@@ -10,24 +10,27 @@ import Foundation
 import UIKit
 
 extension Date {
-    func toString(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        
-        return formatter.string(from: date)
+    var toString: String{
+        get{
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            formatter.locale = Locale(identifier: "en-us")
+            
+            return formatter.string(from: self)
+        }
     }
 }
 
 extension UIView {
     
     
-    func fadeIn(duration: TimeInterval = 4.0) {
+    func fadeIn(duration: TimeInterval) {
         UIView.animate(withDuration: duration, animations: {
             self.alpha = 1.0
         })
     }
-    func fadeOut(duration: TimeInterval = 4.0) {
+    func fadeOut(duration: TimeInterval) {
         UIView.animate(withDuration: duration, animations: {
             self.alpha = 0.0
         })
