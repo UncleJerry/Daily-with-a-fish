@@ -33,16 +33,20 @@ class Day {
         self.day = interval.day!
         
         
+        // Count the total days
         interval = Calendar.current.dateComponents([Calendar.Component.day], from: thatMoment!, to: now)
         self.totalDays = interval.day!
         
+        // Init the current status of internal, special day or future celebrate
         self.dayinfo = DayInfo(year: self.year, month: self.month, day: self.day, days: self.totalDays, thatDay: thatMoment!)
     }
     
     func printToLabel(model: CountModel) -> String{
+        
         var str = ""
         if model == CountModel.Full {
             if year != 0 {
+                // Add year description
                 str += "\(year) year"
                 if year > 1 {
                     str += "s"
@@ -51,6 +55,7 @@ class Day {
                 str += " "
             }
             if month != 0 {
+                // Add month description
                 str += "\(month) month"
                 if month > 1 {
                     str += "s"
@@ -58,6 +63,8 @@ class Day {
                 
                 str += " "
             }
+            
+            // Add day description
             str += "\(day) day"
             
             if day > 1 {
@@ -68,6 +75,7 @@ class Day {
             
             return str
         }else{
+            
             str += "\(totalDays) day"
             if totalDays > 1 {
                 str += "s"
@@ -79,6 +87,7 @@ class Day {
 }
 
 enum CountModel {
+    // CountModel for determine which information should be printed
     case Full
     case Days
 }
@@ -86,8 +95,8 @@ enum CountModel {
 enum SpecialDay: String{
     case OneMonth = "Happy first month!" // 30
     case TwoMonth = "Two month ago you accept me." // 60
-    case ThreeMonth // 90
-    case HundredDays // == 100
+    case ThreeMonth = "Happy three month!" // 90
+    case HundredDays = "It's just the first step of our future." // == 100
     case HalfYear // 180
     case TwoHundredDays // 200
     case SmileDay // 233
