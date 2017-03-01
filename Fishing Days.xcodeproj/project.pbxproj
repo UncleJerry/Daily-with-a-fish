@@ -146,11 +146,11 @@
 			isa = PBXGroup;
 			children = (
 				654988781E65E45A00FBFB8C /* Model */,
-				6571574C1E36FAA400391D4F /* AppDelegate.swift */,
 				654988791E65E47700FBFB8C /* Controller */,
 				657157501E36FAA400391D4F /* Main.storyboard */,
 				657157531E36FAA400391D4F /* Assets.xcassets */,
 				657157551E36FAA400391D4F /* LaunchScreen.storyboard */,
+				6571574C1E36FAA400391D4F /* AppDelegate.swift */,
 				657157581E36FAA400391D4F /* Info.plist */,
 			);
 			path = "Fishing Days";

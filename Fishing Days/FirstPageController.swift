@@ -24,16 +24,31 @@ class FirstPageController: UIViewController {
     @IBOutlet weak var SigninButton: UIButton!
     @IBOutlet weak var FirstLabel: UILabel!
     @IBOutlet weak var SecondLabel: UILabel!
+    @IBOutlet weak var EmailField: UITextField!
+    @IBOutlet weak var PasswdField: UITextField!
     
     @IBAction func SignOperation(_ sender: UIButton) {
         
-        // Remove the first scene
-        FirstLabel.fadeOut(duration: 1)
-        SecondLabel.fadeOut(duration: 1)
-        SigninButton.fadeOut(duration: 1)
-        SignupButton.fadeOut(duration: 1)
+        if PasswdField.alpha == 1 {
+            
+        }else{
+            // Remove the first scene
+            FirstLabel.fadeOut(duration: 1)
+            SecondLabel.fadeOut(duration: 1)
+            
+            PasswdField.fadeIn(duration: 1)
+            EmailField.fadeIn(duration: 1)
+            
+            if sender.currentTitle == "Sign up" {
+                SigninButton.fadeOut(duration: 1)
+                SignupButton.MovePosition(duration: 1, x: -1, y: 400)
+            }else{
+                SignupButton.fadeOut(duration: 1)
+                SigninButton.MovePosition(duration: 1, x: -1, y: 400)
+            }
+
+        }
         
-        print(sender.currentTitle ?? "failed")
     }
     
 
