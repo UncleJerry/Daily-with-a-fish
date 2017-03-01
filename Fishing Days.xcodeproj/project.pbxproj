@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		65361D451E3C73ED0071388E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65361D441E3C73ED0071388E /* HomeViewController.swift */; };
 		653D08621E375AC200845DCC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D08611E375AC200845DCC /* Extension.swift */; };
+		6549887B1E65E4B900FBFB8C /* FirstPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6549887A1E65E4B900FBFB8C /* FirstPageController.swift */; };
 		6571574D1E36FAA400391D4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571574C1E36FAA400391D4F /* AppDelegate.swift */; };
 		657157521E36FAA400391D4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657157501E36FAA400391D4F /* Main.storyboard */; };
 		657157541E36FAA400391D4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657157531E36FAA400391D4F /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 		657157621E36FAA400391D4F /* Fishing_DaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657157611E36FAA400391D4F /* Fishing_DaysTests.swift */; };
 		6571576D1E36FAA400391D4F /* Fishing_DaysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571576C1E36FAA400391D4F /* Fishing_DaysUITests.swift */; };
 		6571577B1E36FD0F00391D4F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571577A1E36FD0F00391D4F /* Day.swift */; };
+		A29DA8F4F9853F65741DE5BD /* Pods_Fishing_Days.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEBF0D7645B5058B0308653 /* Pods_Fishing_Days.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		485B5B5F74D30EB0CC8D247F /* Pods-Fishing Days.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fishing Days.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fishing Days/Pods-Fishing Days.debug.xcconfig"; sourceTree = "<group>"; };
 		65361D441E3C73ED0071388E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		653D08611E375AC200845DCC /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		6549887A1E65E4B900FBFB8C /* FirstPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageController.swift; sourceTree = "<group>"; };
 		657157491E36FAA400391D4F /* Fishing Days.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fishing Days.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6571574C1E36FAA400391D4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657157511E36FAA400391D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		6571576C1E36FAA400391D4F /* Fishing_DaysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fishing_DaysUITests.swift; sourceTree = "<group>"; };
 		6571576E1E36FAA400391D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6571577A1E36FD0F00391D4F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		7EEBF0D7645B5058B0308653 /* Pods_Fishing_Days.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fishing_Days.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		839AA29F1D7999B8F4B91273 /* Pods-Fishing Days.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fishing Days.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fishing Days/Pods-Fishing Days.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A29DA8F4F9853F65741DE5BD /* Pods_Fishing_Days.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EF8DD266CD5E94335F61741 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EEBF0D7645B5058B0308653 /* Pods_Fishing_Days.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C5652F306CBCC84046E2ADB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				485B5B5F74D30EB0CC8D247F /* Pods-Fishing Days.debug.xcconfig */,
+				839AA29F1D7999B8F4B91273 /* Pods-Fishing Days.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		654988781E65E45A00FBFB8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6571577A1E36FD0F00391D4F /* Day.swift */,
+				653D08611E375AC200845DCC /* Extension.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		654988791E65E47700FBFB8C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				65361D441E3C73ED0071388E /* HomeViewController.swift */,
+				6549887A1E65E4B900FBFB8C /* FirstPageController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		657157401E36FAA400391D4F = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +127,8 @@
 				657157601E36FAA400391D4F /* Fishing DaysTests */,
 				6571576B1E36FAA400391D4F /* Fishing DaysUITests */,
 				6571574A1E36FAA400391D4F /* Products */,
+				5C5652F306CBCC84046E2ADB /* Pods */,
+				3EF8DD266CD5E94335F61741 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +145,10 @@
 		6571574B1E36FAA400391D4F /* Fishing Days */ = {
 			isa = PBXGroup;
 			children = (
+				654988781E65E45A00FBFB8C /* Model */,
 				6571574C1E36FAA400391D4F /* AppDelegate.swift */,
-				653D08611E375AC200845DCC /* Extension.swift */,
-				6571577A1E36FD0F00391D4F /* Day.swift */,
+				654988791E65E47700FBFB8C /* Controller */,
 				657157501E36FAA400391D4F /* Main.storyboard */,
-				65361D441E3C73ED0071388E /* HomeViewController.swift */,
 				657157531E36FAA400391D4F /* Assets.xcassets */,
 				657157551E36FAA400391D4F /* LaunchScreen.storyboard */,
 				657157581E36FAA400391D4F /* Info.plist */,
@@ -138,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 657157711E36FAA400391D4F /* Build configuration list for PBXNativeTarget "Fishing Days" */;
 			buildPhases = (
+				4C422D63A1ABD7A0B3894BAC /* [CP] Check Pods Manifest.lock */,
 				657157451E36FAA400391D4F /* Sources */,
 				657157461E36FAA400391D4F /* Frameworks */,
 				657157471E36FAA400391D4F /* Resources */,
+				C0087B4D1CC8188A0D7261E1 /* [CP] Embed Pods Frameworks */,
+				3D79326853B048B46C468474 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,12 +306,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D79326853B048B46C468474 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fishing Days/Pods-Fishing Days-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C422D63A1ABD7A0B3894BAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C0087B4D1CC8188A0D7261E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fishing Days/Pods-Fishing Days-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		657157451E36FAA400391D4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				65361D451E3C73ED0071388E /* HomeViewController.swift in Sources */,
+				6549887B1E65E4B900FBFB8C /* FirstPageController.swift in Sources */,
 				6571574D1E36FAA400391D4F /* AppDelegate.swift in Sources */,
 				6571577B1E36FD0F00391D4F /* Day.swift in Sources */,
 				653D08621E375AC200845DCC /* Extension.swift in Sources */,
@@ -416,6 +511,7 @@
 		};
 		657157721E36FAA400391D4F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 485B5B5F74D30EB0CC8D247F /* Pods-Fishing Days.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -430,6 +526,7 @@
 		};
 		657157731E36FAA400391D4F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 839AA29F1D7999B8F4B91273 /* Pods-Fishing Days.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

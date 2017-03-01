@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeViewController: UITableViewController {
 
@@ -26,6 +27,20 @@ class HomeViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        /*
+        Alamofire.request("https://jerrypho.club/").responseJSON { response in
+            print(response.request!)  // original URL request
+            print(response.response!) // HTTP URL response
+            print(response.data!)     // server data
+            print(response.result)   // result of response serialization
+            
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+        }
+        */
+        
         InLoveLabel.fadeIn(duration: 3)
         let now = Day()
         
