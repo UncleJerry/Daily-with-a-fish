@@ -35,6 +35,14 @@ extension UIView {
             self.alpha = 0.0
         })
     }
+    
+    func MovePosition(duration: TimeInterval, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) {
+        
+        UIView.animate(withDuration: duration, animations: {
+            self.frame = CGRect(x: x, y: y, width: self.frame.width, height: self.frame.height)
+        })
+        
+    }
 }
 
 extension Int {
