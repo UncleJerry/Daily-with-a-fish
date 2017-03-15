@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import Alamofire
 
 class FirstPageController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        /*
+        let user = "zhjmv6@gmail.com"
+        let password = "just4test"
+        
+        let credential = URLCredential(user: user, password: password, persistence: .forSession)
+        
+        Alamofire.request("https://jerrypho.club:3000/login.html/\(user)/\(password)")
+            .authenticate(usingCredential: credential)
+            .responseJSON { response in
+                debugPrint(response)
+        }
+        */
         // Do any additional setup after loading the view.
     }
 
@@ -20,37 +34,37 @@ class FirstPageController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        GoButton.alpha = 0
+    }
+    
     @IBOutlet weak var SignupButton: UIButton!
     @IBOutlet weak var SigninButton: UIButton!
     @IBOutlet weak var FirstLabel: UILabel!
     @IBOutlet weak var SecondLabel: UILabel!
     @IBOutlet weak var EmailField: UITextField!
     @IBOutlet weak var PasswdField: UITextField!
+    @IBOutlet weak var GoButton: UIButton!
     
     @IBAction func SignOperation(_ sender: UIButton) {
         
-        if PasswdField.alpha == 1 {
-            
-        }else{
-            // Remove the first scene
-            FirstLabel.fadeOut(duration: 1)
-            SecondLabel.fadeOut(duration: 1)
-            
-            PasswdField.fadeIn(duration: 1)
-            EmailField.fadeIn(duration: 1)
-            
-            if sender.currentTitle == "Sign up" {
-                SigninButton.fadeOut(duration: 1)
-                SignupButton.MovePosition(duration: 1, x: -1, y: 400)
-            }else{
-                SignupButton.fadeOut(duration: 1)
-                SigninButton.MovePosition(duration: 1, x: -1, y: 400)
-            }
-
-        }
+        FirstLabel.fadeOut(duration: 0.5)
+        SecondLabel.fadeOut(duration: 0.5)
+        
+        PasswdField.fadeIn(duration: 0.5)
+        EmailField.fadeIn(duration: 0.5)
+        
+        EmailField.becomeFirstResponder()
+        GoButton.fadeIn(duration: 0.5)
         
     }
     
+    
+    @IBAction func GoAction(_ sender: UIButton) {
+    }
 
     /*
     // MARK: - Navigation
