@@ -41,6 +41,12 @@ class FirstPageController: UIViewController {
         GoButton.alpha = 0
     }
     
+    enum Action {
+        case Signin
+        case Signup
+    }
+    var action: Action!
+    
     @IBOutlet weak var SignupButton: UIButton!
     @IBOutlet weak var SigninButton: UIButton!
     @IBOutlet weak var FirstLabel: UILabel!
@@ -60,10 +66,17 @@ class FirstPageController: UIViewController {
         EmailField.becomeFirstResponder()
         GoButton.fadeIn(duration: 0.5)
         
+        if sender.currentTitle == "Sign up" {
+            action = .Signup
+        }else{
+            action = .Signin
+        }
+        
     }
     
     
     @IBAction func GoAction(_ sender: UIButton) {
+        
     }
 
     /*

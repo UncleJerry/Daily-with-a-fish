@@ -251,9 +251,6 @@
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="SignOperation:" destination="gZi-n2-eJd" eventType="touchUpInside" id="it9-F9-OOm"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDK-O0-SNp">
                                 <rect key="frame" x="41" y="548" width="293" height="30"/>
@@ -289,7 +286,7 @@
                                 <rect key="frame" x="41" y="283" width="293" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MA8-B3-sdQ">
                                 <rect key="frame" x="172" y="400" width="30" height="30"/>
@@ -300,6 +297,10 @@
                                     <action selector="GoAction:" destination="gZi-n2-eJd" eventType="touchUpInside" id="tIB-CX-EHU"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FirstPageIcon" translatesAutoresizingMaskIntoConstraints="NO" id="h7J-sY-WZK">
+                                <rect key="frame" x="41" y="107" width="88" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -361,4 +362,7 @@
             <point key="canvasLocation" x="33" y="-650"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FirstPageIcon" width="88" height="88"/>
+    </resources>
 </document>
