@@ -251,6 +251,9 @@
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="GoAction:" destination="gZi-n2-eJd" eventType="touchUpInside" id="58F-2M-jkz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDK-O0-SNp">
                                 <rect key="frame" x="41" y="548" width="293" height="30"/>
@@ -333,6 +336,7 @@
                         <outlet property="SecondLabel" destination="vPs-08-hQP" id="QfE-Gu-m5h"/>
                         <outlet property="SigninButton" destination="hDK-O0-SNp" id="nkC-h6-lV6"/>
                         <outlet property="SignupButton" destination="kjz-FN-1X4" id="5eH-xV-0ot"/>
+                        <segue destination="Ibp-7o-JxR" kind="show" identifier="LoginToDashboard" action="showDetailViewController:sender:" id="gLM-l2-YHt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Huk-1F-rnS" userLabel="First Responder" sceneMemberID="firstResponder"/>

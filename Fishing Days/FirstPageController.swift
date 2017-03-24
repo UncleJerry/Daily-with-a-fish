@@ -14,19 +14,16 @@ class FirstPageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        /*
-        let user = "zhjmv6@gmail.com"
-        let password = "just4test"
-        
-        let credential = URLCredential(user: user, password: password, persistence: .forSession)
-        
-        Alamofire.request("https://jerrypho.club:3000/login.html/\(user)/\(password)")
-            .authenticate(usingCredential: credential)
-            .responseJSON { response in
-                debugPrint(response)
+        Alamofire.request("https://jerrypho.club:3000/verify").validate(statusCode: 200...202).responseData { (response) in
+            debugPrint(response)
+            
+            switch response.result {
+            case .success:
+                self.performSegue(withIdentifier: "LoginToDashboard", sender: nil)
+            case .failure(let error):
+                print(error)
+            }
         }
-        */
         // Do any additional setup after loading the view.
     }
 
@@ -76,6 +73,21 @@ class FirstPageController: UIViewController {
     
     
     @IBAction func GoAction(_ sender: UIButton) {
+        let parameter: Parameters = ["username" : EmailField.text!, "password" : PasswdField.text ?? "?"]
+        
+        if action == .Signin {
+            Alamofire.request("https://jerrypho.club:3000/login.html",method: .post, parameters: parameter).validate(statusCode: 200...202).responseData { response in
+                switch response.result {
+                case .success:
+                    self.performSegue(withIdentifier: "LoginToDashboard", sender: nil)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+
+        }else{
+            
+        }
         
     }
 
