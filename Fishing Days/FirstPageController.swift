@@ -61,6 +61,7 @@ class FirstPageController: UIViewController {
         EmailField.fadeIn(duration: 0.5)
         
         EmailField.becomeFirstResponder()
+        
         GoButton.fadeIn(duration: 0.5)
         
         if sender.currentTitle == "Sign up" {
@@ -87,6 +88,7 @@ class FirstPageController: UIViewController {
 
         }else{
             
+            self.performSegue(withIdentifier: "SignupInfo", sender: nil)
         }
         
     }
