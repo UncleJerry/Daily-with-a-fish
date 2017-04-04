@@ -336,7 +336,7 @@
                                     <color key="titleColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="GoAction:" destination="gZi-n2-eJd" eventType="touchUpInside" id="58F-2M-jkz"/>
+                                    <action selector="SignOperation:" destination="gZi-n2-eJd" eventType="touchUpInside" id="yfs-s2-55X"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDK-O0-SNp">

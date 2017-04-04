@@ -13,7 +13,7 @@ class FirstPageController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         Alamofire.request("https://jerrypho.club:3000/verify").validate(statusCode: 200...202).responseData { (response) in
             debugPrint(response)
             
@@ -23,7 +23,7 @@ class FirstPageController: UIViewController {
             case .failure(let error):
                 print(error)
             }
-        }
+        }*/
         // Do any additional setup after loading the view.
     }
 
@@ -77,7 +77,7 @@ class FirstPageController: UIViewController {
         let parameter: Parameters = ["username" : EmailField.text!, "password" : PasswdField.text ?? "?"]
         
         if action == .Signin {
-            Alamofire.request("https://jerrypho.club:3000/login.html",method: .post, parameters: parameter).validate(statusCode: 200...202).responseData { response in
+            Alamofire.request("https://jerrypho.club:3223/login",method: .post, parameters: parameter).validate(statusCode: 200...202).responseData { response in
                 switch response.result {
                 case .success:
                     self.performSegue(withIdentifier: "LoginToDashboard", sender: nil)
@@ -87,7 +87,14 @@ class FirstPageController: UIViewController {
             }
 
         }else{
-            
+            Alamofire.request("https://jerrypho.club:3223/signup",method: .post, parameters: parameter).validate(statusCode: 200...202).responseData { response in
+                switch response.result {
+                case .success:
+                    self.performSegue(withIdentifier: "LoginToDashboard", sender: nil)
+                case .failure(let error):
+                    print(error)
+                }
+            }
             self.performSegue(withIdentifier: "SignupInfo", sender: nil)
         }
         
