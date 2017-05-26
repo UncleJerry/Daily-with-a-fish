@@ -9,23 +9,23 @@
 import Foundation
 
 class Day {
-    var year = 0
-    var month = 0
-    var day = 0
-    var totalDays = 0
-    var dayinfo: DayInfo
+    dynamic var year = 0
+    dynamic var month = 0
+    dynamic var day = 0
+    dynamic var totalDays = 0
+    dynamic var thatDay: Date?
     
     
-    init() {
+    init(dateString: String) {
         // Init Date & Formatter
         let now = Date()
         let dateFormatter = DateFormatter()
         
         // Build that moment
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let dateString = "2017-01-23 00:00:00"
-        let thatMoment = dateFormatter.date(from: dateString)
-        
+        let dateWithFormat = dateString + "00:00:00"
+        let thatMoment = dateFormatter.date(from: dateWithFormat)
+        thatDay = thatMoment
         // Cal interval
         var interval = Calendar.current.dateComponents([Calendar.Component.year, Calendar.Component.month, Calendar.Component.day], from: thatMoment!, to: now)
         self.year = interval.year!
@@ -37,109 +37,21 @@ class Day {
         interval = Calendar.current.dateComponents([Calendar.Component.day], from: thatMoment!, to: now)
         self.totalDays = interval.day!
         
-        // Init the current status of internal, special day or future celebrate
-        self.dayinfo = DayInfo(year: self.year, month: self.month, day: self.day, days: self.totalDays, thatDay: thatMoment!)
     }
     
-    func printToLabel(model: CountModel) -> String{
-        
-        var str = ""
-        if model == CountModel.Full {
-            if year != 0 {
-                // Add year description
-                str += "\(year) year"
-                if year > 1 {
-                    str += "s"
-                }
-                
-                str += " "
-            }
-            if month != 0 {
-                // Add month description
-                str += "\(month) month"
-                if month > 1 {
-                    str += "s"
-                }
-                
-                str += " "
-            }
-            
-            // Add day description
-            str += "\(day) day"
-            
-            if day > 1 {
-                str += "s"
-            }
-            
-            str += " "
-            
-            return str
-        }else{
-            
-            str += "\(totalDays) day"
-            if totalDays > 1 {
-                str += "s"
-            }
-            str += " in total"
-        }
-        return str
+    init(input: Day) {
+        self.year = input.year
+        self.day = input.day
+        self.month = input.month
+        self.totalDays = input.totalDays
+        self.thatDay = input.thatDay
     }
-}
-
-enum CountModel {
-    // CountModel for determine which information should be printed
-    case Full
-    case Days
-}
-
-enum SpecialDay: String{
-    case OneMonth = "Happy first month!" // 30
-    case TwoMonth = "Two month ago you accept me." // 60
-    case ThreeMonth = "Happy three month!" // 90
-    case HundredDays = "It's just the first step of our future." // == 100
-    case HalfYear // 180
-    case TwoHundredDays // 200
-    case SmileDay // 233
-    case Anniversary // 1st 💗
     
-    var name: String {
-        switch self {
-        case .OneMonth:
-            return "One Month"
-        case .TwoMonth:
-            return "Two Month"
-        case .ThreeMonth:
-            return "Three Month"
-        case .HundredDays:
-            return "Hundred Days"
-        case .HalfYear:
-            return "Half a Year"
-        case .TwoHundredDays:
-            return "Two Hundred Days"
-        case .SmileDay:
-            return "SmileDays"
-        case .Anniversary:
-            return "Anniversary"
-        
-        }
-    }
-
+    
 }
 
 
-enum Internal: String {
-    case FirstMonth = "We're in very first period." // < 30
-    case SecondMonth = "It's our second month." // < 60
-    case ThirdMonth = " third month" //  < 90
-    case Approach100 = "Whoa! Ready for hundred days?" // < 100
-    case After100 = "Hundred days proves stable" // > 100
-    case HalfYearLater = "Yikes! Our love has been no bug for half a year" // > 180
-    case OneYear = "We've fought for our future for a year" // > 365
-    case TwoYear // > 730
-    case MoreThanThree
-}
-
-
+/*
 struct DayInfo {
     var InternalStatus: Internal?
     var SpeDay: SpecialDay?
@@ -218,7 +130,7 @@ struct DayInfo {
     }
 }
 
-
+*/
 
 
 

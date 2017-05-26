@@ -90,12 +90,12 @@ class FirstPageController: UIViewController {
             Alamofire.request("https://jerrypho.club:3223/signup",method: .post, parameters: parameter).validate(statusCode: 200...202).responseData { response in
                 switch response.result {
                 case .success:
-                    self.performSegue(withIdentifier: "LoginToDashboard", sender: nil)
+                    self.performSegue(withIdentifier: "SignupInfo", sender: nil)
                 case .failure(let error):
                     print(error)
                 }
             }
-            self.performSegue(withIdentifier: "SignupInfo", sender: nil)
+            //self.performSegue(withIdentifier: "SignupInfo", sender: nil)
         }
         
     }
