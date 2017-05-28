@@ -27,7 +27,7 @@ class AboutUsController: UIViewController {
     }
     
     @IBOutlet weak var CollectionView: UICollectionView!
-    fileprivate var daycard: DayCard?
+    var daycard: DayCard?
     /*
     // MARK: - Navigation
 

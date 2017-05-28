@@ -33,6 +33,20 @@ class DashboardController: UIViewController {
     fileprivate struct Storyboard {
         static let cellIdentifier = "FunctionCell"
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "AboutUs"{
+            let destination: AboutUsController = segue.destination as! AboutUsController
+            
+            destination.daycard = DayCard(inputData: Day(dateString: "2017-01-23"))
+        }
+        
+    }
+    @IBAction func FunctionTouch(_ sender: FunctionButton) {
+        self.performSegue(withIdentifier: sender.command!, sender: nil)
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -48,6 +62,10 @@ extension DashboardController: UICollectionViewDataSource {
         cell.function = functions[indexPath.item]
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
     }
 }
 

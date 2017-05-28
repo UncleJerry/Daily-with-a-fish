@@ -13,6 +13,7 @@ class FunctionCell: UICollectionViewCell {
     @IBOutlet weak var FunctionName: UILabel!
     @IBOutlet weak var FunctionIcon: UIImageView!
     @IBOutlet weak var Description: UILabel!
+    @IBOutlet weak var FunctionButton: FunctionButton!
     
     // MARK: - public API
     var function: Feature! {
@@ -25,6 +26,7 @@ class FunctionCell: UICollectionViewCell {
         FunctionName.text = function.name
         FunctionIcon.image = function.icon
         Description.text = function.descrisption
+        FunctionButton.command = function.navigation
     }
     
     // MARK: - refactor layout

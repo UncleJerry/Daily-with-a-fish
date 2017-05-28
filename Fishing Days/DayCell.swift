@@ -14,4 +14,12 @@ class DayCell: UICollectionViewCell {
     @IBOutlet weak var Description: UILabel!
     @IBOutlet weak var GiantText: UILabel!
     @IBOutlet weak var Image: UIImageView!
+    
+    // MARK: - refactor layout
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.layer.cornerRadius = 8.0
+        self.clipsToBounds = true
+    }
 }
