@@ -75,6 +75,24 @@ class DayCard: Day {
             
         }
     }
+    
+    
+    func getCurrentSpecial() -> String? {
+        
+        guard let special = SpeDay else{
+            return nil
+        }
+        
+        return special.rawValue
+    }
+    
+    func getNextSpecial() -> String {
+        return NextSpeDay!.rawValue
+    }
+    
+    func getNextSpeDate() -> Date {
+        return NextSpeDate!
+    }
 }
 
 

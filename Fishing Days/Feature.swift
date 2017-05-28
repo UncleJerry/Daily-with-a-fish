@@ -23,6 +23,6 @@ class Feature {
     
     static func generate() -> [Feature] {
         
-        return [Feature(name: "About Us", descrisption: "Review your ", icon: UIImage(named: "AboutUs")!, navigation: "AboutUs"), Feature(name: "Notify", descrisption: "Set a notify for lover", icon: UIImage(named: "Notify")!, navigation: "Notify"), Feature(name: "Setting", descrisption: "Settings and Introduction for author", icon: UIImage(named: "Setting")!, navigation: "Setting")]
+        return [Feature(name: "About Us", descrisption: "Review your ", icon: UIImage(named: "Notify")!, navigation: "AboutUs"), Feature(name: "Notify", descrisption: "Set a notify for lover", icon: UIImage(named: "Notify")!, navigation: "Notify"), Feature(name: "Setting", descrisption: "Settings and Author", icon: UIImage(named: "Notify")!, navigation: "Setting")]
     }
 }

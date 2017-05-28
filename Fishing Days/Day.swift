@@ -9,11 +9,11 @@
 import Foundation
 
 class Day {
-    dynamic var year = 0
-    dynamic var month = 0
-    dynamic var day = 0
-    dynamic var totalDays = 0
-    dynamic var thatDay: Date?
+    var year = 0
+    var month = 0
+    var day = 0
+    var totalDays = 0
+    var thatDay: Date?
     
     
     init(dateString: String) {
@@ -27,15 +27,14 @@ class Day {
         let thatMoment = dateFormatter.date(from: dateWithFormat)
         thatDay = thatMoment
         // Cal interval
-        var interval = Calendar.current.dateComponents([Calendar.Component.year, Calendar.Component.month, Calendar.Component.day], from: thatMoment!, to: now)
-        self.year = interval.year!
-        self.month = interval.month!
-        self.day = interval.day!
+        let interval = now.calInterval(thatDay: thatMoment!)
+        self.year = interval[0]
+        self.month = interval[1]
+        self.day = interval[2]
         
         
         // Count the total days
-        interval = Calendar.current.dateComponents([Calendar.Component.day], from: thatMoment!, to: now)
-        self.totalDays = interval.day!
+        self.totalDays = now.calDays(thatDay: thatMoment!)
         
     }
     
@@ -47,6 +46,9 @@ class Day {
         self.thatDay = input.thatDay
     }
     
+    func getTotalDays() -> String {
+        return String(totalDays) + " days"
+    }
     
 }
 

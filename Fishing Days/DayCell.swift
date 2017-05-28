@@ -10,4 +10,8 @@ import UIKit
 
 class DayCell: UICollectionViewCell {
     
+    @IBOutlet weak var Title: UILabel!
+    @IBOutlet weak var Description: UILabel!
+    @IBOutlet weak var GiantText: UILabel!
+    @IBOutlet weak var Image: UIImageView!
 }

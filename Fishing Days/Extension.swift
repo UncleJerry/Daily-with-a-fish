@@ -20,6 +20,18 @@ extension Date {
             return formatter.string(from: self)
         }
     }
+    
+    func calDays(thatDay: Date) -> Int {
+        let interval = Calendar.current.dateComponents([Calendar.Component.day], from: thatDay, to: self)
+        
+        return interval.day!
+    }
+    
+    func calInterval(thatDay: Date) -> [Int] {
+        let interval = Calendar.current.dateComponents([Calendar.Component.year, Calendar.Component.month, Calendar.Component.day], from: thatDay, to: self)
+        
+        return [interval.year!, interval.month!, interval.day!]
+    }
 }
 
 extension UIView {
