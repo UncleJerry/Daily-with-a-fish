@@ -93,6 +93,10 @@ class DayCard: Day {
     func getNextSpeDate() -> Date {
         return NextSpeDate!
     }
+    
+    func checkToday() -> Bool {
+        return SpeDay != nil
+    }
 }
 
 

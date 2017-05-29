@@ -43,7 +43,11 @@ class AboutUsController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension AboutUsController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        if (daycard?.checkToday())!{
+            return 3
+        }
+        
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -58,25 +62,27 @@ extension AboutUsController: UICollectionViewDataSource {
                 cell.Description.isHidden = true
                 
             case 1:
-                cell.Title.text = "Today"
-                cell.Image.isHidden = true
-
-                
-                guard let speDescrip = daycard?.getCurrentSpecial() else {
-                    cell.Description.text = "Totay is normal but worth fighting for"
-                    cell.GiantText.text = "Not in Special Day"
+                if(daycard?.checkToday())!{
+                    cell.Title.text = "Today"
+                    cell.Image.isHidden = true
+                    cell.GiantText.text = daycard?.getCurrentSpecial()
+                    cell.Description.text = ""
+                    
                     break
                 }
-                
+
+                cell.Title.text = "Next Special Day"
+                cell.Image.isHidden = true
+                let speDescrip = daycard?.getNextSpecial()
                 cell.GiantText.text = speDescrip
-                cell.Description.text = ""
-                
+                cell.Description.text = "Remain " + String(Date().calFutureDays(thatDay: (daycard?.getNextSpeDate())!)) + " Days"
+
             case 2:
                 cell.Title.text = "Next Special Day"
                 cell.Image.isHidden = true
                 let speDescrip = daycard?.getNextSpecial()
                 cell.GiantText.text = speDescrip
-                cell.Description.text = "Remain " + String(Date().calDays(thatDay: (daycard?.getNextSpeDate())!)) + " Days"
+                cell.Description.text = "Remain " + String(Date().calFutureDays(thatDay: (daycard?.getNextSpeDate())!)) + " Days"
                 
                 
             default:

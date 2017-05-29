@@ -27,6 +27,12 @@ extension Date {
         return interval.day!
     }
     
+    func calFutureDays(thatDay: Date) -> Int {
+        let interval = Calendar.current.dateComponents([Calendar.Component.day], from: self, to: thatDay)
+        
+        return interval.day!
+    }
+    
     func calInterval(thatDay: Date) -> [Int] {
         let interval = Calendar.current.dateComponents([Calendar.Component.year, Calendar.Component.month, Calendar.Component.day], from: thatDay, to: self)
         

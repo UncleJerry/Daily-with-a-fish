@@ -30,9 +30,7 @@ class DashboardController: UIViewController {
     }
     
     fileprivate let functions = Feature.generate()
-    fileprivate struct Storyboard {
-        static let cellIdentifier = "FunctionCell"
-    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -56,7 +54,7 @@ extension DashboardController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.cellIdentifier, for: indexPath) as! FunctionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FunctionCell", for: indexPath) as! FunctionCell
         
         
         cell.function = functions[indexPath.item]

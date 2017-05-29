@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		65164AA71EDB3C710014129E /* FunctionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65164AA61EDB3C710014129E /* FunctionButton.swift */; };
 		651E8A521ED6F3910005B874 /* FunctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E8A511ED6F3910005B874 /* FunctionCell.swift */; };
-		651E8A561ED6F5380005B874 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E8A551ED6F5380005B874 /* Feature.swift */; };
 		651E8A581ED705FE0005B874 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E8A571ED705FE0005B874 /* DashboardController.swift */; };
 		65239D381ED8322B00842A1F /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65239D371ED8322B00842A1F /* AboutUsController.swift */; };
 		65239D3C1ED8497D00842A1F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65239D3B1ED8497D00842A1F /* ButtonView.swift */; };
@@ -30,6 +29,7 @@
 		657157621E36FAA400391D4F /* Fishing_DaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657157611E36FAA400391D4F /* Fishing_DaysTests.swift */; };
 		6571576D1E36FAA400391D4F /* Fishing_DaysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571576C1E36FAA400391D4F /* Fishing_DaysUITests.swift */; };
 		6571577B1E36FD0F00391D4F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571577A1E36FD0F00391D4F /* Day.swift */; };
+		65C563771EDC2B34006F1612 /* CellElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C563761EDC2B34006F1612 /* CellElement.swift */; };
 		A29DA8F4F9853F65741DE5BD /* Pods_Fishing_Days.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEBF0D7645B5058B0308653 /* Pods_Fishing_Days.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +69,6 @@
 		485B5B5F74D30EB0CC8D247F /* Pods-Fishing Days.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fishing Days.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fishing Days/Pods-Fishing Days.debug.xcconfig"; sourceTree = "<group>"; };
 		65164AA61EDB3C710014129E /* FunctionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionButton.swift; sourceTree = "<group>"; };
 		651E8A511ED6F3910005B874 /* FunctionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionCell.swift; sourceTree = "<group>"; };
-		651E8A551ED6F5380005B874 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		651E8A571ED705FE0005B874 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		65209ADA1EDA779900867FDC /* Fishing Days.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fishing Days.entitlements"; sourceTree = "<group>"; };
 		65239D371ED8322B00842A1F /* AboutUsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsController.swift; sourceTree = "<group>"; };
@@ -95,6 +94,7 @@
 		6571576C1E36FAA400391D4F /* Fishing_DaysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fishing_DaysUITests.swift; sourceTree = "<group>"; };
 		6571576E1E36FAA400391D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6571577A1E36FD0F00391D4F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		65C563761EDC2B34006F1612 /* CellElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellElement.swift; sourceTree = "<group>"; };
 		7EEBF0D7645B5058B0308653 /* Pods_Fishing_Days.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fishing_Days.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		839AA29F1D7999B8F4B91273 /* Pods-Fishing Days.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fishing Days.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fishing Days/Pods-Fishing Days.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,7 +162,7 @@
 				6571577A1E36FD0F00391D4F /* Day.swift */,
 				65239D3D1ED884BF00842A1F /* DayCard.swift */,
 				653D08611E375AC200845DCC /* Extension.swift */,
-				651E8A551ED6F5380005B874 /* Feature.swift */,
+				65C563761EDC2B34006F1612 /* CellElement.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -432,12 +432,12 @@
 				651E8A581ED705FE0005B874 /* DashboardController.swift in Sources */,
 				65331C7E1E9003E9004EE184 /* RadioBox.swift in Sources */,
 				65239D401ED884D100842A1F /* DayCell.swift in Sources */,
+				65C563771EDC2B34006F1612 /* CellElement.swift in Sources */,
 				651E8A521ED6F3910005B874 /* FunctionCell.swift in Sources */,
 				6571574D1E36FAA400391D4F /* AppDelegate.swift in Sources */,
 				65331C7C1E8D34D4004EE184 /* SignupController.swift in Sources */,
 				65239D3C1ED8497D00842A1F /* ButtonView.swift in Sources */,
 				65164AA71EDB3C710014129E /* FunctionButton.swift in Sources */,
-				651E8A561ED6F5380005B874 /* Feature.swift in Sources */,
 				65239D381ED8322B00842A1F /* AboutUsController.swift in Sources */,
 				6571577B1E36FD0F00391D4F /* Day.swift in Sources */,
 				653D08621E375AC200845DCC /* Extension.swift in Sources */,
