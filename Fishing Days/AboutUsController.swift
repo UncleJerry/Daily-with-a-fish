@@ -22,12 +22,14 @@ class AboutUsController: UIViewController {
     }
     
 
-    override var preferredStatusBarStyle : UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     @IBOutlet weak var CollectionView: UICollectionView!
     var daycard: DayCard?
+    
+    
     /*
     // MARK: - Navigation
 

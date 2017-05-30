@@ -38,6 +38,10 @@ class FirstPageController: UIViewController {
         GoButton.alpha = 0
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     enum Action {
         case Signin
         case Signup

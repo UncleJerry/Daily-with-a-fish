@@ -38,6 +38,10 @@ class SignupController: UIViewController {
         FemaleButton.doesSelected = true
         MaleButton.doesSelected = false
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     /*
     // MARK: - Navigation
 

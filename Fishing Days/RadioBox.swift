@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RadioBox: UIButton {
+class RadioBox: FunctionButton {
     
     var selectedButton: UIImage?
     var selectedBG: UIImage = UIImage(named: "ButtonBG")!

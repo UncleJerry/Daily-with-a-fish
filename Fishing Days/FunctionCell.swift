@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FunctionCell: UICollectionViewCell {
+class FunctionCell: GeneralCollectionCell {
     
     @IBOutlet weak var FunctionName: UILabel!
     @IBOutlet weak var FunctionIcon: UIImageView!
@@ -25,15 +25,9 @@ class FunctionCell: UICollectionViewCell {
     fileprivate func updateUI() {
         FunctionName.text = function.name
         FunctionIcon.image = function.icon
-        Description.text = function.descrisption
+        Description.text = function.description
         FunctionButton.command = function.navigation
     }
     
-    // MARK: - refactor layout
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        self.layer.cornerRadius = 8.0
-        self.clipsToBounds = true
-    }
+    
 }
