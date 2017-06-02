@@ -21,14 +21,13 @@ class AboutUsController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     @IBOutlet weak var CollectionView: UICollectionView!
     var daycard: DayCard?
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     /*
     // MARK: - Navigation

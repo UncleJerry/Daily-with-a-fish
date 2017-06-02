@@ -14,7 +14,7 @@ class NotificationViewController: UIViewController {
         super.viewDidLoad()
         
         if notifications.count == 0 {
-            //No
+            NoItemLabel.isHidden = false
         }
         // Do any additional setup after loading the view.
     }
@@ -29,6 +29,8 @@ class NotificationViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    @IBOutlet weak var CollectionView: UICollectionView!
     @IBOutlet weak var NoItemLabel: UILabel!
     /*
     // MARK: - Navigation
@@ -61,7 +63,7 @@ extension NotificationViewController: UICollectionViewDataSource {
         print(indexPath)
     }
 }
-/*
+
 // MARK: - UIScrollViewDelegate
 extension NotificationViewController: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -75,4 +77,4 @@ extension NotificationViewController: UIScrollViewDelegate {
         
         offset = CGPoint(x: roundedIndex * cellWidthWithSpace - scrollView.contentInset.left, y: -scrollView.contentInset.top)
     }
-}*/
+}

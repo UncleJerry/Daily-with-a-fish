@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aTt-Ak-D0w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZYR-f9-TNy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -115,7 +115,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhZ-Yl-Eoc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-687" y="-1493"/>
+            <point key="canvasLocation" x="-743" y="-1495"/>
+        </scene>
+        <!--Match View Controller-->
+        <scene sceneID="d2y-3A-ezG">
+            <objects>
+                <viewController id="ZYR-f9-TNy" customClass="MatchViewController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AfF-q2-7N5"/>
+                        <viewControllerLayoutGuide type="bottom" id="juu-1H-9zo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v2Y-Lj-3D6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="ShakeAnimate" translatesAutoresizingMaskIntoConstraints="NO" id="FDL-A4-LTn">
+                                <rect key="frame" x="102" y="240" width="171" height="187"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="FDL-A4-LTn" firstAttribute="centerY" secondItem="v2Y-Lj-3D6" secondAttribute="centerY" id="r9T-ie-WsZ"/>
+                            <constraint firstItem="FDL-A4-LTn" firstAttribute="centerX" secondItem="v2Y-Lj-3D6" secondAttribute="centerX" id="tj5-Y8-aDq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Image" destination="FDL-A4-LTn" id="TSY-hW-mho"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k22-7a-zaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.80000000000000004" y="-1494.6026986506747"/>
         </scene>
         <!--FirstPage-->
         <scene sceneID="rTm-7N-AOZ">
@@ -479,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4P-oK-Eqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-743" y="-406"/>
+            <point key="canvasLocation" x="-743" y="-582"/>
         </scene>
         <!--Notification-->
         <scene sceneID="tK7-FQ-77g">
@@ -497,6 +528,9 @@
                                 <rect key="frame" x="327" y="28" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="Y9S-7h-qJ7" kind="show" id="Ahs-Bx-tCB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkb-fn-m0g">
                                 <rect key="frame" x="25" y="28" width="22" height="22"/>
@@ -506,7 +540,7 @@
                                     <segue destination="NQt-x2-hmZ" kind="show" id="mSa-YH-O1M"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No reminder, try to add some?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtL-Ck-kSz">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No reminder, try to add some?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtL-Ck-kSz">
                                 <rect key="frame" x="25" y="127" width="324" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -550,12 +584,51 @@
                         <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="CollectionView" destination="wCs-Vb-zAR" id="185-GM-8Wu"/>
                         <outlet property="NoItemLabel" destination="dtL-Ck-kSz" id="xMK-bA-F18"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2g-1O-yuR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-743.20000000000005" y="1073.6131934032985"/>
+        </scene>
+        <!--New Reminder Controller-->
+        <scene sceneID="0pq-Gk-Xmh">
+            <objects>
+                <viewController id="Y9S-7h-qJ7" customClass="NewReminderController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dll-oU-NSk"/>
+                        <viewControllerLayoutGuide type="bottom" id="vE0-d5-9uV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g2C-GO-T4K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc6-dl-YWr">
+                                <rect key="frame" x="25" y="28" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Return"/>
+                                <connections>
+                                    <segue destination="aTt-Ak-D0w" kind="show" id="WRM-bJ-4sQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wS-q4-bW5">
+                                <rect key="frame" x="313" y="24" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="SaveButton" destination="9wS-q4-bW5" id="Efm-GQ-X0e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PjT-Xl-EPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247" y="1074"/>
         </scene>
         <!--Setting-->
         <scene sceneID="mPi-y7-OXY">
@@ -714,8 +787,10 @@
         <image name="FirstPageIcon" width="88" height="88"/>
         <image name="Male" width="27" height="28"/>
         <image name="Return" width="22" height="22"/>
+        <image name="ShakeAnimate" width="171" height="187"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mSa-YH-O1M"/>
+        <segue reference="GTS-Ub-g7S"/>
+        <segue reference="WRM-bJ-4sQ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -24,10 +24,10 @@ class DashboardController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    override var preferredStatusBarStyle : UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
     
     fileprivate let functions = Feature.generate()
     
