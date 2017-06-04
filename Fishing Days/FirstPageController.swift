@@ -99,7 +99,7 @@ class FirstPageController: UIViewController {
                     print(error)
                 }
             }
-            //self.performSegue(withIdentifier: "SignupInfo", sender: nil)
+            
         }
         
     }

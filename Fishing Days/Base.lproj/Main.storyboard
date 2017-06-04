@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZYR-f9-TNy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6cA-k6-nYW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -146,18 +146,17 @@
                     </view>
                     <connections>
                         <outlet property="Image" destination="FDL-A4-LTn" id="TSY-hW-mho"/>
-                        <segue destination="cwX-XG-YQk" kind="show" identifier="ManualMatch" id="QZb-xs-U6d"/>
-                        <segue destination="NQt-x2-hmZ" kind="show" identifier="SignupSuccess" id="GvB-OW-4fP"/>
+                        <segue destination="6cA-k6-nYW" kind="show" identifier="MatchSuccess" id="8Ed-R1-GqO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k22-7a-zaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.80000000000000004" y="-1494.6026986506747"/>
         </scene>
-        <!--View Controller-->
+        <!--Manual Match Controller-->
         <scene sceneID="SgP-Pe-c96">
             <objects>
-                <viewController id="cwX-XG-YQk" sceneMemberID="viewController">
+                <viewController id="cwX-XG-YQk" customClass="ManualMatchController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UKQ-2s-5EN"/>
                         <viewControllerLayoutGuide type="bottom" id="9PZ-07-Gya"/>
@@ -165,12 +164,39 @@
                     <view key="view" contentMode="scaleToFill" id="zGJ-dX-2xv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Her/His email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3KD-vW-ft5">
+                                <rect key="frame" x="16" y="87" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="CheckValid:" destination="cwX-XG-YQk" eventType="editingChanged" id="aFH-JF-k4y"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rE-UE-MdB">
+                                <rect key="frame" x="164" y="125" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Match">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SendMatch:" destination="cwX-XG-YQk" eventType="touchUpInside" id="JoG-2u-rpc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="EmailField" destination="3KD-vW-ft5" id="O76-4C-Csk"/>
+                        <outlet property="MatchButton" destination="1rE-UE-MdB" id="gVU-5e-bo8"/>
+                        <segue destination="6cA-k6-nYW" kind="show" identifier="ManualSuccess" id="pJS-uA-HV0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BtQ-ef-Lqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="-1496"/>
+            <point key="canvasLocation" x="853.60000000000002" y="-1496.4017991004498"/>
         </scene>
         <!--FirstPage-->
         <scene sceneID="rTm-7N-AOZ">
@@ -536,6 +562,66 @@
             </objects>
             <point key="canvasLocation" x="-743" y="-582"/>
         </scene>
+        <!--Date View Controller-->
+        <scene sceneID="rxt-HP-IQJ">
+            <objects>
+                <viewController id="6cA-k6-nYW" customClass="DateViewController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j7v-gZ-FP1"/>
+                        <viewControllerLayoutGuide type="bottom" id="nPA-mL-sly"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JB0-7Q-7m7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="AtK-D2-A5D">
+                                <rect key="frame" x="0.0" y="120" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <date key="date" timeIntervalSinceReferenceDate="518265255.59816498">
+                                    <!--2017-06-04 10:34:15 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="631105200">
+                                    <!--2020-12-31 11:00:00 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="ValueChanged:" destination="6cA-k6-nYW" eventType="valueChanged" id="r4S-9y-eoA"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="When the story started?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2A-qs-4EU">
+                                <rect key="frame" x="25" y="91" width="186" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgm-JG-Lbp">
+                                <rect key="frame" x="135" y="334" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="It's this date!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Submit:" destination="6cA-k6-nYW" eventType="touchUpInside" id="PQ3-JZ-ThJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="DatePicker" destination="AtK-D2-A5D" id="J7A-EY-q7Z"/>
+                        <outlet property="SubmitButton" destination="Sgm-JG-Lbp" id="Iuz-Nf-RQ0"/>
+                        <segue destination="NQt-x2-hmZ" kind="show" identifier="MatchFinished" id="TOj-3i-3bu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Msj-WW-tiB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="-553.67316341829087"/>
+        </scene>
         <!--Notification-->
         <scene sceneID="tK7-FQ-77g">
             <objects>
@@ -814,7 +900,8 @@
         <image name="ShakeAnimate" width="171" height="187"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GvB-OW-4fP"/>
-        <segue reference="WRM-bJ-4sQ"/>
+        <segue reference="GTS-Ub-g7S"/>
+        <segue reference="8Ed-R1-GqO"/>
+        <segue reference="Aqm-ee-XGi"/>
     </inferredMetricsTieBreakers>
 </document>

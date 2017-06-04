@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignupController: UIViewController {
 
@@ -44,6 +45,30 @@ class SignupController: UIViewController {
     }
     
     @IBAction func NextStep(_ sender: ButtonView) {
+        let parameter: Parameters = ["first": FirstNLabel.text!, "gender": FemaleButton.doesSelected ? "female" : "male", "last": FirstNLabel.text!]
+        
+        Alamofire.request("https://jerrypho.club:3223/signup/match_complete",method: .post, parameters: parameter).validate(statusCode: 200...202).responseData { response in
+            switch response.result {
+            case .success:
+                self.performSegue(withIdentifier: "GoToMatch", sender: nil)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToMatch"{
+            let destination: MatchViewController = segue.destination as! MatchViewController
+            if FemaleButton.doesSelected {
+                destination.isFemale = true
+            }else{
+                destination.isFemale = false
+            }
+            
+        }
+    }
 }

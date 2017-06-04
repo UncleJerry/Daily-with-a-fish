@@ -8,6 +8,10 @@
 
 import UIKit
 import UserNotifications
+import Alamofire
+import RealmSwift
+
+let realm = try! Realm()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -30,9 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     // Notification
-    
-    
-    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
         //let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})

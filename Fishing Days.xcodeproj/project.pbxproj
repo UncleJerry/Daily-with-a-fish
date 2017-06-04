@@ -36,6 +36,9 @@
 		658285A91EE3AB6900A916FC /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 658285A51EE3AB6900A916FC /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65C563771EDC2B34006F1612 /* CellElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C563761EDC2B34006F1612 /* CellElement.swift */; };
 		65CC73631EDDDFB500BA4E9A /* NewReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CC73621EDDDFB500BA4E9A /* NewReminderController.swift */; };
+		65F26A6F1EE41A1400C669B9 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F26A6E1EE41A1400C669B9 /* DateViewController.swift */; };
+		65F26A711EE42B6B00C669B9 /* ManualMatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F26A701EE42B6B00C669B9 /* ManualMatchController.swift */; };
+		65F26A741EE45F5E00C669B9 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F26A731EE45F5E00C669B9 /* DateData.swift */; };
 		65F4FF9B1EDEFE2900B869D7 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F4FF9A1EDEFE2900B869D7 /* MatchViewController.swift */; };
 		A29DA8F4F9853F65741DE5BD /* Pods_Fishing_Days.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEBF0D7645B5058B0308653 /* Pods_Fishing_Days.framework */; };
 /* End PBXBuildFile section */
@@ -91,7 +94,7 @@
 		6564085C1EDC62D800D9ECBC /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		6564085E1EDD537B00D9ECBC /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		656408601EDD53DE00D9ECBC /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		657157491E36FAA400391D4F /* Fishing Days.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fishing Days.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		657157491E36FAA400391D4F /* BeTouched.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeTouched.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6571574C1E36FAA400391D4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657157511E36FAA400391D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		657157531E36FAA400391D4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +111,9 @@
 		658285A51EE3AB6900A916FC /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		65C563761EDC2B34006F1612 /* CellElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellElement.swift; sourceTree = "<group>"; };
 		65CC73621EDDDFB500BA4E9A /* NewReminderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReminderController.swift; sourceTree = "<group>"; };
+		65F26A6E1EE41A1400C669B9 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		65F26A701EE42B6B00C669B9 /* ManualMatchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualMatchController.swift; sourceTree = "<group>"; };
+		65F26A731EE45F5E00C669B9 /* DateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
 		65F4FF9A1EDEFE2900B869D7 /* MatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		7EEBF0D7645B5058B0308653 /* Pods_Fishing_Days.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fishing_Days.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		839AA29F1D7999B8F4B91273 /* Pods-Fishing Days.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fishing Days.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fishing Days/Pods-Fishing Days.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 		654988781E65E45A00FBFB8C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				65F26A721EE45F1900C669B9 /* RealmObject */,
 				6571577A1E36FD0F00391D4F /* Day.swift */,
 				656408601EDD53DE00D9ECBC /* Notification.swift */,
 				65239D3D1ED884BF00842A1F /* DayCard.swift */,
@@ -195,6 +202,8 @@
 				65CC73621EDDDFB500BA4E9A /* NewReminderController.swift */,
 				65239D371ED8322B00842A1F /* AboutUsController.swift */,
 				6549887A1E65E4B900FBFB8C /* FirstPageController.swift */,
+				65F26A6E1EE41A1400C669B9 /* DateViewController.swift */,
+				65F26A701EE42B6B00C669B9 /* ManualMatchController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -216,7 +225,7 @@
 		6571574A1E36FAA400391D4F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				657157491E36FAA400391D4F /* Fishing Days.app */,
+				657157491E36FAA400391D4F /* BeTouched.app */,
 				6571575D1E36FAA400391D4F /* Fishing DaysTests.xctest */,
 				657157681E36FAA400391D4F /* Fishing DaysUITests.xctest */,
 			);
@@ -257,12 +266,20 @@
 			path = "Fishing DaysUITests";
 			sourceTree = "<group>";
 		};
+		65F26A721EE45F1900C669B9 /* RealmObject */ = {
+			isa = PBXGroup;
+			children = (
+				65F26A731EE45F5E00C669B9 /* DateData.swift */,
+			);
+			name = RealmObject;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		657157481E36FAA400391D4F /* Fishing Days */ = {
+		657157481E36FAA400391D4F /* BeTouched */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 657157711E36FAA400391D4F /* Build configuration list for PBXNativeTarget "Fishing Days" */;
+			buildConfigurationList = 657157711E36FAA400391D4F /* Build configuration list for PBXNativeTarget "BeTouched" */;
 			buildPhases = (
 				4C422D63A1ABD7A0B3894BAC /* [CP] Check Pods Manifest.lock */,
 				657157451E36FAA400391D4F /* Sources */,
@@ -276,9 +293,9 @@
 			);
 			dependencies = (
 			);
-			name = "Fishing Days";
+			name = BeTouched;
 			productName = "Fishing Days";
-			productReference = 657157491E36FAA400391D4F /* Fishing Days.app */;
+			productReference = 657157491E36FAA400391D4F /* BeTouched.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6571575C1E36FAA400391D4F /* Fishing DaysTests */ = {
@@ -361,7 +378,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				657157481E36FAA400391D4F /* Fishing Days */,
+				657157481E36FAA400391D4F /* BeTouched */,
 				6571575C1E36FAA400391D4F /* Fishing DaysTests */,
 				657157671E36FAA400391D4F /* Fishing DaysUITests */,
 			);
@@ -451,6 +468,7 @@
 				6564085D1EDC62D800D9ECBC /* SettingController.swift in Sources */,
 				6564085B1EDC605300D9ECBC /* SettingCell.swift in Sources */,
 				65239D3E1ED884BF00842A1F /* DayCard.swift in Sources */,
+				65F26A711EE42B6B00C669B9 /* ManualMatchController.swift in Sources */,
 				6549887B1E65E4B900FBFB8C /* FirstPageController.swift in Sources */,
 				651E8A581ED705FE0005B874 /* DashboardController.swift in Sources */,
 				65331C7E1E9003E9004EE184 /* RadioBox.swift in Sources */,
@@ -458,11 +476,13 @@
 				65239D401ED884D100842A1F /* DayCell.swift in Sources */,
 				65C563771EDC2B34006F1612 /* CellElement.swift in Sources */,
 				65F4FF9B1EDEFE2900B869D7 /* MatchViewController.swift in Sources */,
+				65F26A6F1EE41A1400C669B9 /* DateViewController.swift in Sources */,
 				651E8A521ED6F3910005B874 /* FunctionCell.swift in Sources */,
 				6571574D1E36FAA400391D4F /* AppDelegate.swift in Sources */,
 				65331C7C1E8D34D4004EE184 /* SignupController.swift in Sources */,
 				65239D3C1ED8497D00842A1F /* ButtonView.swift in Sources */,
 				656408611EDD53DE00D9ECBC /* Notification.swift in Sources */,
+				65F26A741EE45F5E00C669B9 /* DateData.swift in Sources */,
 				65164AA71EDB3C710014129E /* FunctionButton.swift in Sources */,
 				656408571EDC39AA00D9ECBC /* GeneralCollectionCell.swift in Sources */,
 				6564085F1EDD537B00D9ECBC /* NotificationViewController.swift in Sources */,
@@ -493,12 +513,12 @@
 /* Begin PBXTargetDependency section */
 		6571575F1E36FAA400391D4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 657157481E36FAA400391D4F /* Fishing Days */;
+			target = 657157481E36FAA400391D4F /* BeTouched */;
 			targetProxy = 6571575E1E36FAA400391D4F /* PBXContainerItemProxy */;
 		};
 		6571576A1E36FAA400391D4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 657157481E36FAA400391D4F /* Fishing Days */;
+			target = 657157481E36FAA400391D4F /* BeTouched */;
 			targetProxy = 657157691E36FAA400391D4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -728,7 +748,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		657157711E36FAA400391D4F /* Build configuration list for PBXNativeTarget "Fishing Days" */ = {
+		657157711E36FAA400391D4F /* Build configuration list for PBXNativeTarget "BeTouched" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				657157721E36FAA400391D4F /* Debug */,
