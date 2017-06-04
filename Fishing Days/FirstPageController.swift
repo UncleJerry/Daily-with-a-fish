@@ -48,8 +48,8 @@ class FirstPageController: UIViewController {
     }
     var action: Action!
     
-    @IBOutlet weak var SignupButton: UIButton!
-    @IBOutlet weak var SigninButton: UIButton!
+    @IBOutlet weak var SignupButton: ButtonView!
+    @IBOutlet weak var SigninButton: ButtonView!
     @IBOutlet weak var FirstLabel: UILabel!
     @IBOutlet weak var SecondLabel: UILabel!
     @IBOutlet weak var EmailField: UITextField!

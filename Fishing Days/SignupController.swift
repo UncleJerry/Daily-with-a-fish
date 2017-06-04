@@ -21,7 +21,7 @@ class SignupController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var NextButton: UIButton!
+    @IBOutlet weak var NextButton: ButtonView!
     @IBOutlet weak var BackButton: UIButton!
     @IBOutlet weak var FirstNLabel: UITextField!
     @IBOutlet weak var LastNLabel: UITextField!
@@ -42,14 +42,8 @@ class SignupController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func NextStep(_ sender: ButtonView) {
     }
-    */
 
 }

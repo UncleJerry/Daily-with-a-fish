@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'Fishing Days' do
     pod 'Alamofire', '~> 4.3'
+    pod 'SwiftyJSON'
 end

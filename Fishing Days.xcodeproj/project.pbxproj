@@ -23,10 +23,6 @@
 		6564085D1EDC62D800D9ECBC /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564085C1EDC62D800D9ECBC /* SettingController.swift */; };
 		6564085F1EDD537B00D9ECBC /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564085E1EDD537B00D9ECBC /* NotificationViewController.swift */; };
 		656408611EDD53DE00D9ECBC /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656408601EDD53DE00D9ECBC /* Notification.swift */; };
-		65661A621ED3DF250039A853 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65661A601ED3DF250039A853 /* Realm.framework */; };
-		65661A631ED3DF250039A853 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65661A601ED3DF250039A853 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		65661A641ED3DF250039A853 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65661A611ED3DF250039A853 /* RealmSwift.framework */; };
-		65661A651ED3DF250039A853 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65661A611ED3DF250039A853 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6571574D1E36FAA400391D4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571574C1E36FAA400391D4F /* AppDelegate.swift */; };
 		657157521E36FAA400391D4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657157501E36FAA400391D4F /* Main.storyboard */; };
 		657157541E36FAA400391D4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657157531E36FAA400391D4F /* Assets.xcassets */; };
@@ -34,6 +30,10 @@
 		657157621E36FAA400391D4F /* Fishing_DaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657157611E36FAA400391D4F /* Fishing_DaysTests.swift */; };
 		6571576D1E36FAA400391D4F /* Fishing_DaysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571576C1E36FAA400391D4F /* Fishing_DaysUITests.swift */; };
 		6571577B1E36FD0F00391D4F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571577A1E36FD0F00391D4F /* Day.swift */; };
+		658285A61EE3AB6900A916FC /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658285A41EE3AB6900A916FC /* Realm.framework */; };
+		658285A71EE3AB6900A916FC /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 658285A41EE3AB6900A916FC /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		658285A81EE3AB6900A916FC /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658285A51EE3AB6900A916FC /* RealmSwift.framework */; };
+		658285A91EE3AB6900A916FC /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 658285A51EE3AB6900A916FC /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65C563771EDC2B34006F1612 /* CellElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C563761EDC2B34006F1612 /* CellElement.swift */; };
 		65CC73631EDDDFB500BA4E9A /* NewReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CC73621EDDDFB500BA4E9A /* NewReminderController.swift */; };
 		65F4FF9B1EDEFE2900B869D7 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F4FF9A1EDEFE2900B869D7 /* MatchViewController.swift */; };
@@ -64,8 +64,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				65661A651ED3DF250039A853 /* RealmSwift.framework in Embed Frameworks */,
-				65661A631ED3DF250039A853 /* Realm.framework in Embed Frameworks */,
+				658285A91EE3AB6900A916FC /* RealmSwift.framework in Embed Frameworks */,
+				658285A71EE3AB6900A916FC /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,8 +91,6 @@
 		6564085C1EDC62D800D9ECBC /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		6564085E1EDD537B00D9ECBC /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		656408601EDD53DE00D9ECBC /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		65661A601ED3DF250039A853 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		65661A611ED3DF250039A853 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		657157491E36FAA400391D4F /* Fishing Days.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fishing Days.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6571574C1E36FAA400391D4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657157511E36FAA400391D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +104,8 @@
 		6571576C1E36FAA400391D4F /* Fishing_DaysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fishing_DaysUITests.swift; sourceTree = "<group>"; };
 		6571576E1E36FAA400391D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6571577A1E36FD0F00391D4F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		658285A41EE3AB6900A916FC /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		658285A51EE3AB6900A916FC /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		65C563761EDC2B34006F1612 /* CellElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellElement.swift; sourceTree = "<group>"; };
 		65CC73621EDDDFB500BA4E9A /* NewReminderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReminderController.swift; sourceTree = "<group>"; };
 		65F4FF9A1EDEFE2900B869D7 /* MatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
@@ -118,9 +118,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65661A621ED3DF250039A853 /* Realm.framework in Frameworks */,
+				658285A61EE3AB6900A916FC /* Realm.framework in Frameworks */,
 				A29DA8F4F9853F65741DE5BD /* Pods_Fishing_Days.framework in Frameworks */,
-				65661A641ED3DF250039A853 /* RealmSwift.framework in Frameworks */,
+				658285A81EE3AB6900A916FC /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,8 +202,8 @@
 		657157401E36FAA400391D4F = {
 			isa = PBXGroup;
 			children = (
-				65661A601ED3DF250039A853 /* Realm.framework */,
-				65661A611ED3DF250039A853 /* RealmSwift.framework */,
+				658285A41EE3AB6900A916FC /* Realm.framework */,
+				658285A51EE3AB6900A916FC /* RealmSwift.framework */,
 				6571574B1E36FAA400391D4F /* Fishing Days */,
 				657157601E36FAA400391D4F /* Fishing DaysTests */,
 				6571576B1E36FAA400391D4F /* Fishing DaysUITests */,
@@ -423,7 +423,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C0087B4D1CC8188A0D7261E1 /* [CP] Embed Pods Frameworks */ = {

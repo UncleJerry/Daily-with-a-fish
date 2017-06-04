@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
+import SwiftyJSON
 
 class MatchViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -18,27 +20,24 @@ class MatchViewController: UIViewController, CLLocationManagerDelegate {
         becomeFirstResponder()
         
         let shakeAnimation = CAKeyframeAnimation(keyPath: "transform.rotation")
-        //设置晃动角度
         let angle = Double.pi / 6.0
-        //设置关键帧动画的值
+        
         shakeAnimation.values = [angle, -angle, angle]
-        //设置关键帧动画每帧的执行时间，这里不设置也行，默认平均分配时间
         shakeAnimation.keyTimes = [NSNumber(value: 0), NSNumber(value: 0.5), NSNumber(value: 1)]
-        //设置动画重复次数，默认为1次
         shakeAnimation.duration = 3
         shakeAnimation.repeatCount = MAXFLOAT
         //设置动画执行效果
         shakeAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
         //设置相邻动画过渡方式
         shakeAnimation.calculationMode = kCAAnimationCubic
-        //添加动画
+        
+        
         Image.layer.add(shakeAnimation, forKey: "Shake")
         
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.delegate = self as CLLocationManagerDelegate
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        startLocation = nil
+        
+        
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -54,22 +53,32 @@ class MatchViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
     var startLocation: CLLocation!
+    var timer = Timer()
+    var location: Coordinate?
+    
     @IBOutlet weak var Image: UIImageView!
     override public func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.delegate = self as CLLocationManagerDelegate
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+            startLocation = nil
             
+            // Put it in shake
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateMatchQueue), userInfo: nil, repeats: true)
         }
     }
     
     override public func motionCancelled(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            //Image.layer.removeAnimation(forKey: "Shake")
+            
         }
     }
     
     override public func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            //Image.layer.removeAnimation(forKey: "Shake")
+            
         }
     }
 
@@ -80,17 +89,25 @@ class MatchViewController: UIViewController, CLLocationManagerDelegate {
         print(latestLocation.coordinate.latitude)
         print("longitude")
         print(latestLocation.coordinate.longitude)
-        /*
-        horizontalAccuracy.text = String(format: "%.4f", latestLocation.horizontalAccuracy)
-        altitude.text = String(format: "%.4f", latestLocation.altitude)
-        verticalAccuracy.text = String(format: "%.4f", latestLocation.verticalAccuracy)*/
         
+        location = Coordinate(latitude: latestLocation.coordinate.latitude, longitude: latestLocation.coordinate.longitude)
         
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
     }
+    
+    func updateMatchQueue(){
+        Alamofire.request("https://jerrypho.club:3223/signup/manual_match").responseJSON { response in
+            debugPrint(response)
+            
+            if let json = response.result.value {
+                print("JSON: \(json)")
+            }
+        }
+    }
+    
     
     /*
     // MARK: - Navigation
@@ -102,4 +119,15 @@ class MatchViewController: UIViewController, CLLocationManagerDelegate {
     }
     */
 
+}
+
+
+struct Coordinate {
+    var latitude: Double?
+    var longitude: Double?
+    
+    init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
 }

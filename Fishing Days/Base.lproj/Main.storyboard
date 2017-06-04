@@ -42,6 +42,9 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="NextStep:" destination="rch-ue-jmj" eventType="touchUpInside" id="yL8-AH-GWC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuY-oa-a2d">
                                 <rect key="frame" x="40" y="515" width="295" height="30"/>
@@ -111,11 +114,12 @@
                         <outlet property="MaleButton" destination="fQK-Wl-DHB" id="EEX-YW-8av"/>
                         <outlet property="NextButton" destination="Ypu-gx-lc3" id="FgX-il-QyR"/>
                         <outlet property="Tips" destination="ajb-uM-bfH" id="nup-el-2dc"/>
+                        <segue destination="ZYR-f9-TNy" kind="show" identifier="GoToMatch" id="fpn-J5-1ND"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhZ-Yl-Eoc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-743" y="-1495"/>
+            <point key="canvasLocation" x="-970" y="-1495"/>
         </scene>
         <!--Match View Controller-->
         <scene sceneID="d2y-3A-ezG">
@@ -142,11 +146,31 @@
                     </view>
                     <connections>
                         <outlet property="Image" destination="FDL-A4-LTn" id="TSY-hW-mho"/>
+                        <segue destination="cwX-XG-YQk" kind="show" identifier="ManualMatch" id="QZb-xs-U6d"/>
+                        <segue destination="NQt-x2-hmZ" kind="show" identifier="SignupSuccess" id="GvB-OW-4fP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k22-7a-zaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.80000000000000004" y="-1494.6026986506747"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SgP-Pe-c96">
+            <objects>
+                <viewController id="cwX-XG-YQk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UKQ-2s-5EN"/>
+                        <viewControllerLayoutGuide type="bottom" id="9PZ-07-Gya"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zGJ-dX-2xv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BtQ-ef-Lqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="855" y="-1496"/>
         </scene>
         <!--FirstPage-->
         <scene sceneID="rTm-7N-AOZ">
@@ -790,7 +814,7 @@
         <image name="ShakeAnimate" width="171" height="187"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GTS-Ub-g7S"/>
+        <segue reference="GvB-OW-4fP"/>
         <segue reference="WRM-bJ-4sQ"/>
     </inferredMetricsTieBreakers>
 </document>
