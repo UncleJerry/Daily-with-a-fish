@@ -13,6 +13,9 @@ class FirstPageController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
+        
+        print(connected)
         /*
         Alamofire.request("https://jerrypho.club:3000/verify").validate(statusCode: 200...202).responseData { (response) in
             debugPrint(response)

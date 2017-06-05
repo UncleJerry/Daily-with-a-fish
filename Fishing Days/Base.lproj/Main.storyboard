@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6cA-k6-nYW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aTt-Ak-D0w">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <!--SignUp-->
         <scene sceneID="Wpr-xp-9aP">
             <objects>
-                <viewController title="SignUp" id="rch-ue-jmj" customClass="SignupController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SignUp" id="rch-ue-jmj" customClass="SignupController" customModule="BeTouched" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sqp-0v-HCR"/>
                         <viewControllerLayoutGuide type="bottom" id="9Ny-pa-H9G"/>
@@ -35,7 +35,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypu-gx-lc3" customClass="ButtonView" customModule="Fishing_Days" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypu-gx-lc3" customClass="ButtonView" customModule="BeTouched" customModuleProvider="target">
                                 <rect key="frame" x="40" y="477" width="295" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
@@ -58,7 +58,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4I-OQ-dmg" customClass="RadioBox" customModule="Fishing_Days" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4I-OQ-dmg" customClass="RadioBox" customModule="BeTouched" customModuleProvider="target">
                                 <rect key="frame" x="146" y="385" width="29" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="29" id="4L1-xF-e1b"/>
@@ -69,7 +69,7 @@
                                     <action selector="FemaleTouch:" destination="rch-ue-jmj" eventType="touchUpInside" id="Eoc-8e-k7r"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQK-Wl-DHB" customClass="RadioBox" customModule="Fishing_Days" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQK-Wl-DHB" customClass="RadioBox" customModule="BeTouched" customModuleProvider="target">
                                 <rect key="frame" x="199" y="385" width="29" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="29" id="5bI-ps-jYa"/>
@@ -124,7 +124,7 @@
         <!--Match View Controller-->
         <scene sceneID="d2y-3A-ezG">
             <objects>
-                <viewController id="ZYR-f9-TNy" customClass="MatchViewController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZYR-f9-TNy" customClass="MatchViewController" customModule="BeTouched" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AfF-q2-7N5"/>
                         <viewControllerLayoutGuide type="bottom" id="juu-1H-9zo"/>
@@ -156,7 +156,7 @@
         <!--Manual Match Controller-->
         <scene sceneID="SgP-Pe-c96">
             <objects>
-                <viewController id="cwX-XG-YQk" customClass="ManualMatchController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cwX-XG-YQk" customClass="ManualMatchController" customModule="BeTouched" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UKQ-2s-5EN"/>
                         <viewControllerLayoutGuide type="bottom" id="9PZ-07-Gya"/>
@@ -201,7 +201,7 @@
         <!--FirstPage-->
         <scene sceneID="rTm-7N-AOZ">
             <objects>
-                <viewController title="FirstPage" id="gZi-n2-eJd" customClass="FirstPageController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FirstPage" id="gZi-n2-eJd" customClass="FirstPageController" customModule="BeTouched" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7L2-T1-hgl"/>
                         <viewControllerLayoutGuide type="bottom" id="bX2-6h-PpL"/>
@@ -210,7 +210,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjz-FN-1X4" customClass="ButtonView" customModule="Fishing_Days" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjz-FN-1X4" customClass="ButtonView" customModule="BeTouched" customModuleProvider="target">
                                 <rect key="frame" x="41" y="506" width="294" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Sign up">
@@ -313,7 +313,7 @@
         <!--Dashboard-->
         <scene sceneID="2kl-TR-pLD">
             <objects>
-                <viewController title="Dashboard" id="NQt-x2-hmZ" customClass="DashboardController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dashboard" id="NQt-x2-hmZ" customClass="DashboardController" customModule="BeTouched" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AMe-re-n3z"/>
                         <viewControllerLayoutGuide type="bottom" id="MGX-1b-BEU"/>
@@ -332,7 +332,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FunctionCell" id="6aE-cM-siP" customClass="FunctionCell" customModule="Fishing_Days" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FunctionCell" id="6aE-cM-siP" customClass="FunctionCell" customModule="BeTouched" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="32.5" width="180" height="260"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -342,7 +342,7 @@
                                                 <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="xaH-aQ-lvR">
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="260"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2R-LX-PRV" customClass="FunctionButton" customModule="Fishing_Days" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2R-LX-PRV" customClass="FunctionButton" customModule="BeTouched" customModuleProvider="target">
                                                             <rect key="frame" x="-36" y="-90" width="180" height="260"/>
                                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <state key="normal" title="Button">
@@ -445,7 +445,7 @@
         <!--About US-->
         <scene sceneID="JBC-nY-c9a">
             <objects>
-                <viewController title="About US" id="fbV-yd-LgU" customClass="AboutUsController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About US" id="fbV-yd-LgU" customClass="AboutUsController" customModule="BeTouched" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bhv-qh-Jhi"/>
                         <viewControllerLayoutGuide type="bottom" id="O2E-dd-TQG"/>
@@ -464,7 +464,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DayCell" id="caV-xt-9UK" customClass="DayCell" customModule="Fishing_Days" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DayCell" id="caV-xt-9UK" customClass="DayCell" customModule="BeTouched" customModuleProvider="target">
                                         <rect key="frame" x="11" y="0.0" width="321" height="233"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -565,7 +565,7 @@
         <!--Date View Controller-->
         <scene sceneID="rxt-HP-IQJ">
             <objects>
-                <viewController id="6cA-k6-nYW" customClass="DateViewController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6cA-k6-nYW" customClass="DateViewController" customModule="BeTouched" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j7v-gZ-FP1"/>
                         <viewControllerLayoutGuide type="bottom" id="nPA-mL-sly"/>
@@ -625,7 +625,7 @@
         <!--Notification-->
         <scene sceneID="tK7-FQ-77g">
             <objects>
-                <viewController title="Notification" id="aTt-Ak-D0w" customClass="NotificationViewController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Notification" id="aTt-Ak-D0w" customClass="NotificationViewController" customModule="BeTouched" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wsq-bm-aiV"/>
                         <viewControllerLayoutGuide type="bottom" id="z5O-vV-48d"/>
@@ -639,7 +639,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="Y9S-7h-qJ7" kind="show" id="Ahs-Bx-tCB"/>
+                                    <action selector="Refresh:" destination="aTt-Ak-D0w" eventType="touchUpInside" id="SKp-BM-Kw3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkb-fn-m0g">
@@ -662,27 +662,93 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="o6r-vC-HxK">
-                                    <size key="itemSize" width="280" height="124"/>
+                                    <size key="itemSize" width="313" height="202"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NotificationCell" id="yIF-nI-C1N" userLabel="NotificationCell">
-                                        <rect key="frame" x="23.5" y="0.0" width="280" height="124"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NotificationCell" id="yIF-nI-C1N" userLabel="NotificationCell" customClass="NotificationCell" customModule="BeTouched" customModuleProvider="target">
+                                        <rect key="frame" x="7" y="0.0" width="313" height="202"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="124"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="313" height="202"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-UH-a93">
-                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="124"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-UH-a93">
+                                                    <rect key="frame" x="0.0" y="0.0" width="313" height="202"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pw6-OS-NSZ">
+                                                            <rect key="frame" x="20" y="131" width="38" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="nEV-PE-oD9"/>
+                                                                <constraint firstAttribute="width" constant="38" id="p0y-k0-Rip"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.62352941179999999" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOy-ZS-At3">
+                                                            <rect key="frame" x="203" y="131" width="54" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="54" id="Zc5-TT-ytX"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.62352941179999999" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWS-ma-iQv">
+                                                            <rect key="frame" x="20" y="19" width="266" height="104"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <color key="textColor" red="0.62352941179999999" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oag-U6-IdX">
+                                                            <rect key="frame" x="20" y="160" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.62352941179999999" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LR-Mi-beI">
+                                                            <rect key="frame" x="203" y="160" width="83" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.62352941179999999" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="jWS-ma-iQv" firstAttribute="leading" secondItem="pw6-OS-NSZ" secondAttribute="leading" id="6Nu-3t-Efc"/>
+                                                        <constraint firstAttribute="bottom" secondItem="oag-U6-IdX" secondAttribute="bottom" constant="21" id="7w1-fi-n3z"/>
+                                                        <constraint firstItem="jWS-ma-iQv" firstAttribute="trailing" secondItem="5LR-Mi-beI" secondAttribute="trailing" id="BzY-BV-jlE"/>
+                                                        <constraint firstItem="oag-U6-IdX" firstAttribute="baseline" secondItem="5LR-Mi-beI" secondAttribute="baseline" id="ERT-ea-QZu"/>
+                                                        <constraint firstAttribute="trailing" secondItem="jWS-ma-iQv" secondAttribute="trailing" constant="27" id="Gcg-ln-yGN"/>
+                                                        <constraint firstAttribute="trailing" secondItem="YOy-ZS-At3" secondAttribute="trailing" constant="56" id="Oxs-P0-DEs"/>
+                                                        <constraint firstItem="pw6-OS-NSZ" firstAttribute="top" secondItem="jWS-ma-iQv" secondAttribute="bottom" constant="8" symbolic="YES" id="QnM-Dg-ayB"/>
+                                                        <constraint firstItem="pw6-OS-NSZ" firstAttribute="firstBaseline" secondItem="YOy-ZS-At3" secondAttribute="firstBaseline" id="b44-ZS-7wV"/>
+                                                        <constraint firstItem="jWS-ma-iQv" firstAttribute="leading" secondItem="Rjd-UH-a93" secondAttribute="leading" constant="20" id="bed-YQ-5DP"/>
+                                                        <constraint firstItem="YOy-ZS-At3" firstAttribute="leading" secondItem="5LR-Mi-beI" secondAttribute="leading" id="dec-u1-e7k"/>
+                                                        <constraint firstItem="pw6-OS-NSZ" firstAttribute="baseline" secondItem="YOy-ZS-At3" secondAttribute="baseline" id="qu8-pZ-Dd8"/>
+                                                        <constraint firstItem="jWS-ma-iQv" firstAttribute="top" secondItem="Rjd-UH-a93" secondAttribute="top" constant="19" id="rqe-YV-ttR"/>
+                                                        <constraint firstItem="oag-U6-IdX" firstAttribute="top" secondItem="pw6-OS-NSZ" secondAttribute="bottom" constant="8" symbolic="YES" id="vV0-bf-JrJ"/>
+                                                        <constraint firstItem="pw6-OS-NSZ" firstAttribute="leading" secondItem="oag-U6-IdX" secondAttribute="leading" id="ymb-UX-k2V"/>
+                                                        <constraint firstItem="oag-U6-IdX" firstAttribute="firstBaseline" secondItem="5LR-Mi-beI" secondAttribute="firstBaseline" id="zTc-Ef-pFD"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="280" height="124"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Rjd-UH-a93" secondAttribute="trailing" id="2Mz-5q-wjO"/>
+                                            <constraint firstItem="Rjd-UH-a93" firstAttribute="leading" secondItem="yIF-nI-C1N" secondAttribute="leading" id="FxI-U5-HFJ"/>
+                                            <constraint firstItem="Rjd-UH-a93" firstAttribute="top" secondItem="yIF-nI-C1N" secondAttribute="top" id="IAE-7S-gxu"/>
+                                            <constraint firstAttribute="bottom" secondItem="Rjd-UH-a93" secondAttribute="bottom" id="Yhb-D1-R9D"/>
+                                        </constraints>
+                                        <size key="customSize" width="313" height="202"/>
+                                        <connections>
+                                            <outlet property="Description" destination="jWS-ma-iQv" id="B7G-8a-w3X"/>
+                                            <outlet property="RepeatLabel" destination="5LR-Mi-beI" id="ylF-Pv-cQK"/>
+                                            <outlet property="TimeLabel" destination="oag-U6-IdX" id="wcm-Uj-eWW"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -705,7 +771,7 @@
         <!--New Reminder Controller-->
         <scene sceneID="0pq-Gk-Xmh">
             <objects>
-                <viewController id="Y9S-7h-qJ7" customClass="NewReminderController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y9S-7h-qJ7" customClass="NewReminderController" customModule="BeTouched" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dll-oU-NSk"/>
                         <viewControllerLayoutGuide type="bottom" id="vE0-d5-9uV"/>
@@ -743,7 +809,7 @@
         <!--Setting-->
         <scene sceneID="mPi-y7-OXY">
             <objects>
-                <viewController title="Setting" id="WPk-iW-XmP" customClass="SettingController" customModule="Fishing_Days" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Setting" id="WPk-iW-XmP" customClass="SettingController" customModule="BeTouched" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PPW-kM-nRe"/>
                         <viewControllerLayoutGuide type="bottom" id="5tK-Bg-gmD"/>
@@ -762,7 +828,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SettingCell" id="LEH-IS-03d" userLabel="SettingCell2Row" customClass="SettingCell" customModule="Fishing_Days" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SettingCell" id="LEH-IS-03d" userLabel="SettingCell2Row" customClass="SettingCell" customModule="BeTouched" customModuleProvider="target">
                                         <rect key="frame" x="23.5" y="0.0" width="280" height="124"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -900,8 +966,8 @@
         <image name="ShakeAnimate" width="171" height="187"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GTS-Ub-g7S"/>
-        <segue reference="8Ed-R1-GqO"/>
-        <segue reference="Aqm-ee-XGi"/>
+        <segue reference="pJS-uA-HV0"/>
+        <segue reference="mSa-YH-O1M"/>
+        <segue reference="WRM-bJ-4sQ"/>
     </inferredMetricsTieBreakers>
 </document>

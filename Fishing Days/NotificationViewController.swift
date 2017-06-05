@@ -9,31 +9,144 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class NotificationViewController: UIViewController {
 
+    
+    fileprivate let notifications = realm.objects(Notification.self)
+    
+    @IBAction func Refresh(_ sender: UIButton) {
+        CollectionView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if notifications.count == 0 {
-            NoItemLabel.isHidden = false
+        
+        
+        Alamofire.request("https://jerrypho.club:3223/Get_Notification",method: .get).validate(statusCode: 200...202).responseJSON { response in
+            switch response.result {
+            case .success:
+                //print(response.value ?? "Meet in error")
+                let json = JSON(response.value)
+                
+                
+                
+                if self.notifications.count == 0{
+                    self.loadFromServer(jsonData: json)
+                }else{
+                    self.syncNotifications(jsonData: json)
+                }
+                
+                
+                if self.notifications.count != 0 {
+                    self.NoItemLabel.isHidden = true
+                }
+            case .failure(let error):
+                print(error)
+            }
+            
+            
         }
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+    
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    fileprivate var notifications: [Notification] = []
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    @IBOutlet weak var CollectionView: UICollectionView!
+    @IBOutlet var CollectionView: UICollectionView!
     @IBOutlet weak var NoItemLabel: UILabel!
+    
+    func loadFromServer(jsonData: JSON){
+        print("Start loading")
+        for (_, subJson):(String, JSON) in jsonData {
+            loadSingleNotification(jsonData: subJson)
+        }
+        
+    }
+    
+    func loadSingleNotification(jsonData: JSON) {
+        let single = Notification()
+        single.notifyID = jsonData["notifyid"].intValue
+        single.detail = jsonData["detail"].stringValue
+        
+        let repeatNum = jsonData["repeatmodel"].intValue
+        let model = single.setModel(modelNum: repeatNum)
+        
+        switch model {
+        case .No:
+            single.year = jsonData["year"].intValue
+            single.month = jsonData["month"].intValue
+            single.day = jsonData["day"].intValue
+        case .Week:
+            single.weekName = jsonData["week"].stringValue
+        case .Month:
+            single.day = jsonData["day"].intValue
+        case .Year:
+            single.month = jsonData["month"].intValue
+            single.day = jsonData["day"].intValue
+        default: break
+            // Remain to handle error
+        }
+        
+        single.hour = jsonData["hour"].intValue
+        single.minute = jsonData["minute"].intValue
+        
+        try! realm.write {
+            realm.add(single)
+        }
+        
+        CollectionView.reloadData()
+    }
+    
+    
+    func syncNotifications(jsonData: JSON){
+        var IDs = [Int: Int]()
+        
+        
+        for (index,subJson):(String, JSON) in jsonData{
+            IDs[subJson["notifyid"].intValue] = Int(index)
+        }
+        
+        
+        
+        for item in notifications{
+            
+            guard let _ = IDs[item.notifyID] else {
+                try! realm.write {
+                    realm.delete(item)
+                }
+                
+                return
+            }
+            
+        }
+        
+        for (notifyID, jsonIndex) in IDs{
+            if notifications.filter("notifyID = %@", notifyID).count == 0 {
+                loadSingleNotification(jsonData: jsonData[jsonIndex])
+            }
+        }
+        
+        CollectionView.reloadData()
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -53,16 +166,12 @@ extension NotificationViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FunctionCell", for: indexPath) as! FunctionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NotificationCell", for: indexPath) as! NotificationCell
         
         
-        //cell.function = notifications[indexPath.item]
-        
+        cell.notification = notifications[indexPath.item]
+        cell.layoutIfNeeded()
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
     }
 }
 

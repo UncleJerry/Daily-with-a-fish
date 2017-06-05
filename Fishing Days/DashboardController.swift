@@ -61,10 +61,6 @@ extension DashboardController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
-    }
 }
 
 // MARK: - UIScrollViewDelegate
