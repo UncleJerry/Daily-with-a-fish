@@ -21,6 +21,23 @@ extension Date {
         }
     }
     
+    var toIntArray: [Int] {
+        get{
+            var intArray = [Int]()
+            let calendar = Calendar.current
+            
+            intArray.append(calendar.component(.year, from: self))
+            intArray.append(calendar.component(.month, from: self))
+            intArray.append(calendar.component(.day, from: self))
+            intArray.append(calendar.component(.hour, from: self))
+            intArray.append(calendar.component(.minute, from: self))
+            
+            return intArray
+        }
+    }
+    
+    
+    
     func calDays(thatDay: Date) -> Int {
         let interval = Calendar.current.dateComponents([Calendar.Component.day], from: thatDay, to: self)
         
@@ -70,6 +87,12 @@ extension UIView {
         })
         
     }
+    
+    func rotation(angle: Double, duration: TimeInterval) {
+        UIView.animate(withDuration: duration, animations: {
+            self.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+        })
+    }
 }
 
 extension UIViewController {
@@ -85,4 +108,10 @@ extension UIViewController {
         view.endEditing(true)
     }
     
+}
+
+func getUUID() -> String {
+    let uuidRef = CFUUIDCreate(nil)
+    let uuidStringRef = CFUUIDCreateString(nil,uuidRef)
+    return uuidStringRef! as String
 }

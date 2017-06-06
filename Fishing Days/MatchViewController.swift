@@ -84,10 +84,6 @@ class MatchViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let latestLocation: CLLocation = locations[locations.count - 1]
-        print("latitude")
-        print(latestLocation.coordinate.latitude)
-        print("longitude")
-        print(latestLocation.coordinate.longitude)
         
         location = Coordinate(latitude: latestLocation.coordinate.latitude, longitude: latestLocation.coordinate.longitude)
         

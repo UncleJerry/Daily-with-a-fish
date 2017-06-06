@@ -13,4 +13,7 @@ class Profile: Object {
     dynamic var Firstname = ""
     dynamic var Lastname = ""
     dynamic var isFemale = false
+    dynamic var matchedFName = ""
+    dynamic var matchedLName = ""
+    dynamic var dateString = ""
 }

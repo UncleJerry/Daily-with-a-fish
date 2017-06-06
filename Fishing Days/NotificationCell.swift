@@ -13,6 +13,8 @@ class NotificationCell: GeneralCollectionCell {
     @IBOutlet weak var Description: UILabel!
     @IBOutlet weak var TimeLabel: UILabel!
     @IBOutlet weak var RepeatLabel: UILabel!
+    @IBOutlet weak var DeleteButton: FunctionButton!
+    
     
     var notification: Notification! {
         didSet {
@@ -21,8 +23,8 @@ class NotificationCell: GeneralCollectionCell {
     }
     
     fileprivate func updateUI() {
-        Description.text = notification.detail
         
+        Description.text = notification.detail
         
         var repeatStr = "Every " + notification.getMode().rawValue
         var timeStr = ""
@@ -41,5 +43,9 @@ class NotificationCell: GeneralCollectionCell {
         }
         TimeLabel.text = timeStr
         RepeatLabel.text = repeatStr
+        
+        DeleteButton.command = String(notification.notifyID)
     }
+    
+    
 }

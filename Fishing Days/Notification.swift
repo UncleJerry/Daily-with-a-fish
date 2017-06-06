@@ -12,6 +12,7 @@ import RealmSwift
 class Notification: Object {
     
     dynamic var notifyID = 0
+    dynamic var localID = ""
     dynamic var detail: String?
     dynamic var repeatModel: String?
     dynamic var year = 0
@@ -42,7 +43,7 @@ class Notification: Object {
     }
     
     func setModel(modelNum: Int) -> RepeatModel {
-        print(modelNum)
+        
         switch modelNum {
         case 0:
             self.model = .No
@@ -59,6 +60,10 @@ class Notification: Object {
         }
         
         return self.model!
+    }
+    
+    func setModel(model: RepeatModel) {
+        self.model = model
     }
     
     func getMode() -> RepeatModel {
