@@ -28,6 +28,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         application.registerForRemoteNotifications()
 
+        /*
+        let profile = Profile()
+        profile.dateString = "2017-01-23"
+        profile.Firstname = "Jerry"
+        profile.Lastname = "Chou"
+        
+        profile.isFemale = false
+        
+        try! realm.write {
+            realm.add(profile)
+        }*/
+        
+        let defaults: UserDefaults = UserDefaults.standard
+    
+        if !defaults.bool(forKey: "LaunchedBefore") {
+            defaults.set(true, forKey: "LaunchedBefore")
+            defaults.set(true, forKey: "DisplayTotalDays")
+        }
+        
         
         // Override point for customization after application launch.
         return true

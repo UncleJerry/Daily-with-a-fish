@@ -110,25 +110,4 @@ enum SpecialDay: String{
     case TwoHundredDays = "Two Hundred Days" // 200
     case Anniversary = "Anniversary" // 1st 💗
     
-    /*
-    var name: String {
-        switch self {
-        case .OneMonth:
-            return "One Month"
-        case .TwoMonth:
-            return "Two Month"
-        case .ThreeMonth:
-            return "Three Month"
-        case .HundredDays:
-            return "Hundred Days"
-        case .HalfYear:
-            return "Half a Year"
-        case .TwoHundredDays:
-            return "Two Hundred Days"
-        case .Anniversary:
-            return "Anniversary"
-            
-        }
-    }*/
-    
 }

@@ -50,5 +50,38 @@ class Day {
         return String(totalDays) + " days"
     }
     
+    func getFullCount() -> String {
+        var text = ""
+        if year != 0 {
+            text += String(year) + " year"
+            
+            if year > 1 {
+                text += "s"
+            }
+            
+            text += " "
+        }
+        
+        if month != 0 {
+            text += String(month) + " month"
+            
+            if month > 1 {
+                text += "s"
+            }
+            
+            text += " "
+        }
+        
+        if day != 0 {
+            text += String(day) + " day"
+            
+            if month > 1 {
+                text += "s"
+            }
+        }
+        
+        return text
+    }
+    
 }
 

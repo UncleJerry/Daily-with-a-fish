@@ -60,8 +60,11 @@ class NewReminderController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return pickerData[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedModel = row
+    
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName : UIColor.white])
+        return attributedString
     }
     
     @IBAction func GotoNext(_ sender: UIButton) {

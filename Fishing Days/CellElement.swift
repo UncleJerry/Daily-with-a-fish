@@ -52,7 +52,7 @@ class Setting: CellElement {
     }
     
     static func generate() -> [Setting]{
-        return [Setting(name: "Profile", description: nil, icon: nil, type: .Profile, navigation: nil), Setting(name: "Display Total days", description: nil, icon: nil, type: .Basic, navigation: nil), Setting(name: "About Author", description: nil, icon: nil, type: .About, navigation: nil)]
+        return [Setting(name: "Profile", description: nil, icon: nil, type: .Profile, navigation: nil), Setting(name: "Display Total days", description: nil, icon: nil, type: .Basic, navigation: nil), Setting(name: "Log out", description: nil, icon: nil, type: .Logout, navigation: "Logout"), Setting(name: "About Author", description: nil, icon: nil, type: .About, navigation: nil)]
     }
     
 }
@@ -62,4 +62,5 @@ enum SettingType {
     case Display
     case Profile
     case About
+    case Logout
 }

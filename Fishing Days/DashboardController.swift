@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
+import Alamofire
 
 class DashboardController: UIViewController {
 
-    
+    let profile = realm.objects(Profile.self)[0]
+    var connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
     @IBOutlet weak var CollectionView: UICollectionView!
+    @IBOutlet weak var Greetings: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        Greetings.text = "Hey " + profile.Firstname + ", what's up?"
         // Do any additional setup after loading the view.
     }
 
@@ -38,7 +43,7 @@ class DashboardController: UIViewController {
         if segue.identifier == "AboutUs"{
             let destination: AboutUsController = segue.destination as! AboutUsController
             
-            destination.daycard = DayCard(inputData: Day(dateString: "2017-01-23"))
+            destination.daycard = DayCard(inputData: Day(dateString: profile.dateString))
         }
         
     }

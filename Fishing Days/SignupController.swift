@@ -8,12 +8,14 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 class SignupController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboard()
         // Do any additional setup after loading the view.
     }
 
@@ -29,15 +31,17 @@ class SignupController: UIViewController {
     @IBOutlet weak var Tips: UILabel!
     @IBOutlet weak var MaleButton: RadioBox!
     @IBOutlet weak var FemaleButton: RadioBox!
-    
+    var connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
 
     @IBAction func MaleTouch(_ sender: RadioBox) {
         MaleButton.doesSelected = true
         FemaleButton.doesSelected = false
+        
     }
     @IBAction func FemaleTouch(_ sender: RadioBox) {
         FemaleButton.doesSelected = true
         MaleButton.doesSelected = false
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -45,9 +49,24 @@ class SignupController: UIViewController {
     }
     
     @IBAction func NextStep(_ sender: ButtonView) {
-        let parameter: Parameters = ["first": FirstNLabel.text!, "gender": FemaleButton.doesSelected ? "female" : "male", "last": FirstNLabel.text!]
+        connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
         
-        Alamofire.request("https://jerrypho.club:3223/signup/match_complete",method: .post, parameters: parameter).validate(statusCode: 200...202).responseData { response in
+        if !connected! {
+            NoConnection(message: "Seems like you lose the network connection, please try later.")
+        }
+        
+        let profile = Profile()
+        profile.Firstname = FirstNLabel.text!
+        profile.Lastname = LastNLabel.text!
+        profile.isFemale = FemaleButton.doesSelected
+        
+        try! realm.write {
+            realm.add(profile)
+        }
+        
+        let parameter: Parameters = ["first": FirstNLabel.text!, "gender": FemaleButton.doesSelected ? "female" : "male", "last": LastNLabel.text!]
+        
+        Alamofire.request("https://jerrypho.club:3223/signup/userinfo",method: .post, parameters: parameter).validate(statusCode: 200...202).responseData { response in
             switch response.result {
             case .success:
                 self.performSegue(withIdentifier: "GoToMatch", sender: nil)
@@ -57,18 +76,4 @@ class SignupController: UIViewController {
         }
     }
 
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GoToMatch"{
-            let destination: MatchViewController = segue.destination as! MatchViewController
-            if FemaleButton.doesSelected {
-                destination.isFemale = true
-            }else{
-                destination.isFemale = false
-            }
-            
-        }
-    }
 }

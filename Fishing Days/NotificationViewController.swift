@@ -16,36 +16,42 @@ class NotificationViewController: UIViewController {
     
     fileprivate let notifications = realm.objects(Notification.self)
     
-    @IBAction func Refresh(_ sender: UIButton) {
-        CollectionView.reloadData()
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if notifications.count == 0 {
+            NoItemLabel.isHidden = false
+        }
         
-        
-        Alamofire.request("https://jerrypho.club:3223/Get_Notification",method: .get).validate(statusCode: 200...202).responseJSON { response in
-            switch response.result {
-            case .success:
-                
-                let json = JSON(response.value!)
-                
-                if self.notifications.count == 0{
-                    self.loadFromServer(jsonData: json)
-                }else{
-                    self.syncNotifications(jsonData: json)
+        if connected! {
+            Alamofire.request("https://jerrypho.club:3223/Get_Notification",method: .get).validate(statusCode: 200...202).responseJSON { response in
+                switch response.result {
+                case .success:
+                    
+                    let json = JSON(response.value!)
+                    
+                    if self.notifications.count == 0{
+                        self.loadFromServer(jsonData: json)
+                    }else{
+                        self.syncNotifications(jsonData: json)
+                    }
+                    
+                    
+                    if self.notifications.count != 0 {
+                        self.NoItemLabel.isHidden = true
+                    }
+                case .failure(let error):
+                    print(error)
                 }
                 
                 
-                if self.notifications.count != 0 {
-                    self.NoItemLabel.isHidden = true
-                }
-            case .failure(let error):
-                print(error)
             }
-            
-            
+        }
+        
+        if notifications.count == 0 {
+            NoItemLabel.isHidden = false
         }
         
         
@@ -68,7 +74,7 @@ class NotificationViewController: UIViewController {
     @IBOutlet weak var NoItemLabel: UILabel!
     @IBOutlet weak var DeleteModelButton: UIButton!
     var canDelete = false
-    
+    var connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
     
     @IBAction func DeleteModel(_ sender: UIButton) {
         
@@ -91,7 +97,7 @@ class NotificationViewController: UIViewController {
             let alert = UIAlertController(title: "Confirm", message: "Are you sure to delete this?", preferredStyle: .actionSheet)
             
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
-                let notification = self.notifications.filter("notifyID = %@", Int(sender.command!))
+                let notification = self.notifications.filter("notifyID = %@", Int(sender.command!) ?? 0)
                 try! realm.write {
                     realm.delete(notification)
                 }
@@ -160,7 +166,6 @@ class NotificationViewController: UIViewController {
         for (index,subJson):(String, JSON) in jsonData{
             IDs[subJson["notifyid"].intValue] = Int(index)
         }
-        
         
         
         for item in notifications{

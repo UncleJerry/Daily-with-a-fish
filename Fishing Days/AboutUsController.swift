@@ -29,6 +29,7 @@ class AboutUsController: UIViewController {
         return .lightContent
     }
     
+    fileprivate let defaults: UserDefaults = UserDefaults.standard
     /*
     // MARK: - Navigation
 
@@ -58,7 +59,12 @@ extension AboutUsController: UICollectionViewDataSource {
             switch indexPath.item {
             case 0:
                 cell.Title.text = "Fall in love"
-                cell.GiantText.text = daycard?.getTotalDays()
+                if defaults.bool(forKey: "DisplayTotalDays") {
+                    cell.GiantText.text = daycard?.getTotalDays()
+                }else{
+                    cell.GiantText.text = daycard?.getFullCount()
+                }
+                
                 cell.Image.isHidden = true
                 cell.Description.isHidden = true
                 

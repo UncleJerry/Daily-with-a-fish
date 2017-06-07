@@ -16,6 +16,7 @@ class DayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        DatePicker.setValue(UIColor.white, forKey: "textColor")
         // Do any additional setup after loading the view.
     }
 
@@ -24,11 +25,24 @@ class DayViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 
     @IBOutlet weak var DatePicker: UIDatePicker!
     var detail: String?
+    var connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
     
     @IBAction func SaveNotification(_ sender: UIButton) {
+        connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
+        
+        if !connected! {
+            NoConnection(message: "Seems like you have no connection, please try again later.")
+            
+            return
+        }
+        
         let dateArray = DatePicker.date.toIntArray
         let newNotify = Notification()
         let uuid = getUUID()

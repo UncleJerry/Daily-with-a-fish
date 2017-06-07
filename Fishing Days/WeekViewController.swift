@@ -16,12 +16,17 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        TimePicker.setValue(UIColor.white, forKey: "textColor")
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     
@@ -33,6 +38,7 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     let pickerData = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     var selectedWeek = 0
+    var connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -42,8 +48,9 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         return pickerData.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName : UIColor.white])
+        return attributedString
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -51,6 +58,15 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     @IBAction func SaveNotification(_ sender: UIButton) {
+        
+        connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
+        
+        if !connected! {
+            NoConnection(message: "Seems like you have no connection, please try again later.")
+            
+            return
+        }
+        
         let dateArray = TimePicker.date.toIntArray
         let newNotify = Notification()
         let uuid = getUUID()

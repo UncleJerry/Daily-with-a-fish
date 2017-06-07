@@ -8,14 +8,19 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 class FirstPageController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
+        let status = realm.objects(Status.self)
+        if status.count != 0{
+            if status[0].logged {
+                self.performSegue(withIdentifier: "LoginToDashboard", sender: nil)
+            }
+        }
         
-        print(connected)
         /*
         Alamofire.request("https://jerrypho.club:3000/verify").validate(statusCode: 200...202).responseData { (response) in
             debugPrint(response)
@@ -27,7 +32,7 @@ class FirstPageController: UIViewController {
                 print(error)
             }
         }*/
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,8 +54,10 @@ class FirstPageController: UIViewController {
         case Signin
         case Signup
     }
+    
     var action: Action!
     
+    var connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
     @IBOutlet weak var SignupButton: ButtonView!
     @IBOutlet weak var SigninButton: ButtonView!
     @IBOutlet weak var FirstLabel: UILabel!
@@ -81,12 +88,30 @@ class FirstPageController: UIViewController {
     
     
     @IBAction func GoAction(_ sender: UIButton) {
+        
+        connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
+        
+        if !connected! {
+            
+            NoConnection(message: "Seems like you have no connection, please try again later.")
+            // Calcel the Action
+            return
+        }
+        
         let parameter: Parameters = ["username" : EmailField.text!, "password" : PasswdField.text ?? "?"]
         
         if action == .Signin {
             Alamofire.request("https://jerrypho.club:3223/login",method: .post, parameters: parameter).validate(statusCode: 200...202).responseData { response in
                 switch response.result {
                 case .success:
+                    
+                    // if
+                    
+                    let status = Status()
+                    status.logged = true
+                    try! realm.write {
+                        realm.add(status)
+                    }
                     self.performSegue(withIdentifier: "LoginToDashboard", sender: nil)
                 case .failure(let error):
                     print(error)
@@ -107,14 +132,5 @@ class FirstPageController: UIViewController {
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

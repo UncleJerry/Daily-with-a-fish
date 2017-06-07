@@ -108,6 +108,15 @@ extension UIViewController {
         view.endEditing(true)
     }
     
+    func NoConnection(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "Alright", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
 func getUUID() -> String {
