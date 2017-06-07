@@ -14,7 +14,7 @@ import RealmSwift
 class NotificationViewController: UIViewController {
 
     
-    fileprivate let notifications = realm.objects(Notification.self)
+    fileprivate let notifications = realm.objects(Notifications.self)
     
     
     
@@ -24,6 +24,8 @@ class NotificationViewController: UIViewController {
         if notifications.count == 0 {
             NoItemLabel.isHidden = false
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshCells(notification:)), name: NSNotification.Name("RefreshCell"), object: nil)
         
         if connected! {
             Alamofire.request("https://jerrypho.club:3223/Get_Notification",method: .get).validate(statusCode: 200...202).responseJSON { response in
@@ -42,8 +44,8 @@ class NotificationViewController: UIViewController {
                     if self.notifications.count != 0 {
                         self.NoItemLabel.isHidden = true
                     }
-                case .failure(let error):
-                    print(error)
+                case .failure:
+                    self.ErrorAlert(message: "Network is not functioning.")
                 }
                 
                 
@@ -123,8 +125,12 @@ class NotificationViewController: UIViewController {
         
     }
     
+    func refreshCells(notification: Notification) {
+        CollectionView.reloadData()
+    }
+    
     func loadSingleNotification(jsonData: JSON) {
-        let single = Notification()
+        let single = Notifications()
         single.notifyID = jsonData["notifyid"].intValue
         single.detail = jsonData["detail"].stringValue
         

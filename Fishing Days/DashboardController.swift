@@ -21,6 +21,25 @@ class DashboardController: UIViewController {
         super.viewDidLoad()
 
         Greetings.text = "Hey " + profile.Firstname + ", what's up?"
+        
+        let status = realm.objects(Status.self)[0]
+        
+        if !status.registered {
+            let parameter: Parameters = ["deviceid": status.deviceid]
+            Alamofire.request("https://jerrypho.club:3223/Add_device",method: .post, parameters: parameter).validate(statusCode: 200...202).responseJSON { response in
+                switch response.result {
+                case .success:
+                    
+                    try! realm.write {
+                        status.registered = true
+                    }
+                    
+                case .failure:
+                    self.ErrorAlert(message: "Network is not functioning.")
+                }
+            }
+        }
+        
         // Do any additional setup after loading the view.
     }
 

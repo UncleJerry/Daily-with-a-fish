@@ -62,13 +62,13 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
         
         if !connected! {
-            NoConnection(message: "Seems like you have no connection, please try again later.")
+            ErrorAlert(message: "Seems like you have no connection, please try again later.")
             
             return
         }
         
         let dateArray = TimePicker.date.toIntArray
-        let newNotify = Notification()
+        let newNotify = Notifications()
         let uuid = getUUID()
         
         newNotify.localID = uuid
@@ -89,18 +89,18 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                 let json = JSON(response.value!)
                 let notifyid = json["notifyid"].intValue
                 
-                let notification = realm.objects(Notification.self).filter("localID = %@", uuid)
+                let notification = realm.objects(Notifications.self).filter("localID = %@", uuid)
                 try! realm.write {
                     notification[0].notifyID = notifyid
                 }
                 
                 
                 
-            case .failure(let error):
-                print(error)
+            case .failure:
+                self.ErrorAlert(message: "Network is not functioning.")
             }
         }
-        
+        NotificationCenter.default.post(name: NSNotification.Name("RefreshCell"), object: nil)
         self.performSegue(withIdentifier: "SuccessFromWeek", sender: nil)
     }
     // MARK: - Navigation
@@ -112,6 +112,12 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             
             destination.detail = detail
         }
+        /*
+        if segue.identifier == "SuccessFromWeek" {
+            let destination: NotificationViewController = segue.destination as! NotificationViewController
+            
+            destination.isAppended = true
+        }*/
     }
     
 }

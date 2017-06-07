@@ -28,8 +28,9 @@ class ManualMatchController: UIViewController {
     @IBOutlet weak var MatchButton: UIButton!
     @IBOutlet weak var Activity: UIActivityIndicatorView!
     
+    var connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
     var isFemale: Bool?
-    var matchedFemale: Bool?
+    var matchedFemale: Bool = false
     var firstname: String?
     var lastname: String?
     var timer = Timer()
@@ -41,15 +42,23 @@ class ManualMatchController: UIViewController {
         if segue.identifier == "ManualSuccess"{
             let destination: DateViewController = segue.destination as! DateViewController
             
-            destination.matchedID = matchID!
+            destination.matchedID = matchid!
         }
     }
     
     
 
     @IBAction func SendMatch(_ sender: UIButton) {
-        if EmailField.text == nil {
+        if (EmailField.text?.isEmpty)! {
+            ErrorAlert(message: "Please tell me your mate's email address.")
+            return
+        }
+        
+        connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
+        if !connected! {
+            ErrorAlert(message: "Seems like you have no connection, please try again later.")
             
+            return
         }
         
         let parameter: Parameters = ["target": EmailField.text!]
@@ -61,14 +70,17 @@ class ManualMatchController: UIViewController {
                 
                 self.firstname = json["firstname"].stringValue
                 self.lastname = json["lastname"].stringValue
-                self.matchedFemale = json["isFemale"].boolValue
+                if json["isFemale"].stringValue == "t"{
+                    self.matchedFemale = true
+                }
+                
                 self.matchid = json["uid"].intValue
-                self.Activity.isHidden = false
+                self.Activity.fadeIn(duration: 0.3)
                 self.Activity.startAnimating()
                 
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(self.checkMatchValid)), userInfo: nil, repeats: true)
-            case .failure(let error):
-                print(error)
+            case .failure:
+                self.ErrorAlert(message: "Network is not functioning.")
             }
             
         }
@@ -84,12 +96,20 @@ class ManualMatchController: UIViewController {
                 
                 if json["status"].stringValue == "success"{
                     self.timer.invalidate()
+                    let profile = realm.objects(Profile.self)[0]
+                    
+                    try! realm.write {
+                        profile.matchedFName = self.firstname!
+                        profile.matchedLName = self.lastname!
+                        profile.matchedFemale = self.matchedFemale
+                    }
+                    
                     self.performSegue(withIdentifier: "ManualSuccess", sender: nil)
                 }
                 
                 
-            case .failure(let error):
-                print(error)
+            case .failure:
+                self.ErrorAlert(message: "Network is not functioning.")
             }
             
             

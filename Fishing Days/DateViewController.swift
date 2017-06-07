@@ -30,17 +30,16 @@ class DateViewController: UIViewController {
     
     @IBOutlet weak var SubmitButton: UIButton!
     @IBOutlet weak var DatePicker: UIDatePicker!
-    var matchedFemale: Bool?
+    
     var matchedID: Int?
     var connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
-    
     
     
     @IBAction func Submit(_ sender: UIButton) {
         connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
         
         if !connected! {
-            NoConnection(message: "Seems like you lose the network connection, please try later.")
+            ErrorAlert(message: "Seems like you lose the network connection, please try later.")
             return
         }
         
@@ -56,10 +55,16 @@ class DateViewController: UIViewController {
                 try! realm.write {
                     profile[0].dateString = dateString
                 }
+                let status = Status()
+                status.logged = true
+                
+                try! realm.write {
+                    realm.add(status)
+                }
                 
                 self.performSegue(withIdentifier: "MatchFinished", sender: nil)
-            case .failure(let error):
-                print(error)
+            case .failure:
+                self.ErrorAlert(message: "Network is not functioning.")
             }
         }
     }

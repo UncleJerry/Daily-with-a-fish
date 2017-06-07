@@ -16,7 +16,7 @@ class NotificationCell: GeneralCollectionCell {
     @IBOutlet weak var DeleteButton: FunctionButton!
     
     
-    var notification: Notification! {
+    var notification: Notifications! {
         didSet {
             updateUI()
         }

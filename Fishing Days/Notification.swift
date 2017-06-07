@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Notification: Object {
+class Notifications: Object {
     
     dynamic var notifyID = 0
     dynamic var localID = ""

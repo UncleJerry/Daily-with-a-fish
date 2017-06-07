@@ -9,17 +9,12 @@
 import UIKit
 import Alamofire
 import RealmSwift
+import SwiftyJSON
 
 class FirstPageController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let status = realm.objects(Status.self)
-        if status.count != 0{
-            if status[0].logged {
-                self.performSegue(withIdentifier: "LoginToDashboard", sender: nil)
-            }
-        }
         
         /*
         Alamofire.request("https://jerrypho.club:3000/verify").validate(statusCode: 200...202).responseData { (response) in
@@ -32,9 +27,20 @@ class FirstPageController: UIViewController {
                 print(error)
             }
         }*/
+        DispatchQueue.main.async(execute: {
+            let status = realm.objects(Status.self)
+            if status.count != 0{
+                
+                if status[0].logged {
+                    self.performSegue(withIdentifier: "LoginToDashboard", sender: nil)
+                }
+            }
+        });
+        
         
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,6 +48,7 @@ class FirstPageController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         
         GoButton.alpha = 0
     }
@@ -93,7 +100,7 @@ class FirstPageController: UIViewController {
         
         if !connected! {
             
-            NoConnection(message: "Seems like you have no connection, please try again later.")
+            ErrorAlert(message: "Seems like you have no connection, please try again later.")
             // Calcel the Action
             return
         }
@@ -101,30 +108,60 @@ class FirstPageController: UIViewController {
         let parameter: Parameters = ["username" : EmailField.text!, "password" : PasswdField.text ?? "?"]
         
         if action == .Signin {
-            Alamofire.request("https://jerrypho.club:3223/login",method: .post, parameters: parameter).validate(statusCode: 200...202).responseData { response in
+            Alamofire.request("https://jerrypho.club:3223/login",method: .post, parameters: parameter).validate(statusCode: 200...202).responseJSON { response in
                 switch response.result {
                 case .success:
+                    let json = JSON(response.value!)
                     
-                    // if
-                    
-                    let status = Status()
-                    status.logged = true
+                    let status = realm.objects(Status.self)
                     try! realm.write {
-                        realm.add(status)
+                        status[0].logged = true
                     }
+                    
+                    let newProfile = Profile()
+                    
+                    newProfile.Firstname = json["firstname"].stringValue
+                    newProfile.Lastname = json["lastname"].stringValue
+                    
+                    let fullDateString = json["theday"].stringValue
+                    let range: Range = fullDateString.startIndex..<fullDateString.index(fullDateString.startIndex, offsetBy: 10)
+                    newProfile.dateString = fullDateString.substring(with: range)
+                    
+                    newProfile.matchedFName = json["mfname"].stringValue
+                    newProfile.matchedLName = json["mlname"].stringValue
+                    
+                    if json["female"].stringValue == "true" {
+                        newProfile.isFemale = true
+                    }
+                    if json["mfemale"].stringValue == "true" {
+                        newProfile.matchedFemale = true
+                    }
+                    
+                    try! realm.write {
+                        realm.add(newProfile)
+                    }
+                    
+                    
                     self.performSegue(withIdentifier: "LoginToDashboard", sender: nil)
-                case .failure(let error):
-                    print(error)
+                case .failure:
+                    self.ErrorAlert(message: "Network is not functioning.")
                 }
             }
 
         }else{
-            Alamofire.request("https://jerrypho.club:3223/signup",method: .post, parameters: parameter).validate(statusCode: 200...202).responseData { response in
+            Alamofire.request("https://jerrypho.club:3223/signup",method: .post, parameters: parameter).validate(statusCode: 200...202).responseJSON { response in
                 switch response.result {
                 case .success:
-                    self.performSegue(withIdentifier: "SignupInfo", sender: nil)
-                case .failure(let error):
-                    print(error)
+                    let json = JSON(response.value!)
+                    
+                    if json["status"].stringValue == "exist"{
+                        self.ErrorAlert(message: "The email has already existed.")
+                    }else{
+                        self.performSegue(withIdentifier: "SignupInfo", sender: nil)
+                    }
+                    
+                case .failure:
+                    self.ErrorAlert(message: "Network is not functioning.")
                 }
             }
             

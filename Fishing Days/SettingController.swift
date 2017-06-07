@@ -46,8 +46,14 @@ class SettingController: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func ButtonClick(_ sender: FunctionButton) {
-        if sender.command == "email" {
+        if sender.command! == "email" {
+            
+            if !MFMailComposeViewController.canSendMail() {
+                return
+            }
+            
             let composeVC = MFMailComposeViewController()
+            
             composeVC.mailComposeDelegate = self
             // Configure the fields of the interface.
             composeVC.setToRecipients(["jerrychou233@gmail.com"])
@@ -55,9 +61,11 @@ class SettingController: UIViewController, MFMailComposeViewControllerDelegate {
             composeVC.setMessageBody(" ", isHTML: false)
             // Present the view controller modally.
             self.present(composeVC, animated: true, completion: nil)
-        }else if sender.command == "Logout"{
+            
+        }else if sender.command! == "Logout"{
             
             let alert = UIAlertController(title: "Confirm", message: "Are you sure to log out?", preferredStyle: .actionSheet)
+            
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
                 
                 let status = realm.objects(Status.self)[0]
@@ -65,22 +73,35 @@ class SettingController: UIViewController, MFMailComposeViewControllerDelegate {
                     status.logged = false
                 }
                 
+                print("1")
+                let profile = realm.objects(Profile.self)
+                try! realm.write {
+                    realm.delete(profile)
+                }
+                
+                print("2")
                 Alamofire.request("https://jerrypho.club:3223/logout", method: .get).responseJSON { response in
                     _ = JSON(response.value!)
                     
                     
                 }
-                
+                print("3")
+                self.performSegue(withIdentifier: "Logout", sender: nil)
             }))
             alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
                 
             }))
             
-            
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
     @IBAction func EndEdit(_ sender: UITextField) {
+        if (sender.text?.isEmpty)! {
+            ErrorAlert(message: "Please fill your name")
+            return
+        }
+        
         connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
         
         if !connected! {

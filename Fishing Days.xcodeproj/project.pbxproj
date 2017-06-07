@@ -22,14 +22,11 @@
 		655090C31EE5114A007845F7 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655090C21EE5114A007845F7 /* NotificationCell.swift */; };
 		656408571EDC39AA00D9ECBC /* GeneralCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656408561EDC39AA00D9ECBC /* GeneralCollectionCell.swift */; };
 		6564085B1EDC605300D9ECBC /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564085A1EDC605300D9ECBC /* SettingCell.swift */; };
-		6564085F1EDD537B00D9ECBC /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564085E1EDD537B00D9ECBC /* NotificationViewController.swift */; };
 		656408611EDD53DE00D9ECBC /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656408601EDD53DE00D9ECBC /* Notification.swift */; };
 		6571574D1E36FAA400391D4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571574C1E36FAA400391D4F /* AppDelegate.swift */; };
 		657157521E36FAA400391D4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657157501E36FAA400391D4F /* Main.storyboard */; };
 		657157541E36FAA400391D4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657157531E36FAA400391D4F /* Assets.xcassets */; };
 		657157571E36FAA400391D4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657157551E36FAA400391D4F /* LaunchScreen.storyboard */; };
-		657157621E36FAA400391D4F /* Fishing_DaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657157611E36FAA400391D4F /* Fishing_DaysTests.swift */; };
-		6571576D1E36FAA400391D4F /* Fishing_DaysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571576C1E36FAA400391D4F /* Fishing_DaysUITests.swift */; };
 		6571577B1E36FD0F00391D4F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571577A1E36FD0F00391D4F /* Day.swift */; };
 		658285A61EE3AB6900A916FC /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658285A41EE3AB6900A916FC /* Realm.framework */; };
 		658285A71EE3AB6900A916FC /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 658285A41EE3AB6900A916FC /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -44,27 +41,11 @@
 		65DC00021EE6A8BF00AD682F /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC00011EE6A8BF00AD682F /* WeekViewController.swift */; };
 		65DC00041EE6BE0600AD682F /* MonthYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC00031EE6BE0600AD682F /* MonthYearViewController.swift */; };
 		65DC00061EE6BFB100AD682F /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC00051EE6BFB100AD682F /* DayViewController.swift */; };
+		65E996711EE8724F002A3262 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E996701EE8724F002A3262 /* NotificationViewController.swift */; };
 		65F26A6F1EE41A1400C669B9 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F26A6E1EE41A1400C669B9 /* DateViewController.swift */; };
 		65F26A711EE42B6B00C669B9 /* ManualMatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F26A701EE42B6B00C669B9 /* ManualMatchController.swift */; };
 		A29DA8F4F9853F65741DE5BD /* Pods_Fishing_Days.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEBF0D7645B5058B0308653 /* Pods_Fishing_Days.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6571575E1E36FAA400391D4F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 657157411E36FAA400391D4F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 657157481E36FAA400391D4F;
-			remoteInfo = "Fishing Days";
-		};
-		657157691E36FAA400391D4F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 657157411E36FAA400391D4F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 657157481E36FAA400391D4F;
-			remoteInfo = "Fishing Days";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		65661A661ED3DF250039A853 /* Embed Frameworks */ = {
@@ -99,7 +80,6 @@
 		655090C21EE5114A007845F7 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		656408561EDC39AA00D9ECBC /* GeneralCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralCollectionCell.swift; sourceTree = "<group>"; };
 		6564085A1EDC605300D9ECBC /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
-		6564085E1EDD537B00D9ECBC /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		656408601EDD53DE00D9ECBC /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		657157491E36FAA400391D4F /* BeTouched.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeTouched.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6571574C1E36FAA400391D4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,10 +87,8 @@
 		657157531E36FAA400391D4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		657157561E36FAA400391D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		657157581E36FAA400391D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6571575D1E36FAA400391D4F /* Fishing DaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fishing DaysTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657157611E36FAA400391D4F /* Fishing_DaysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fishing_DaysTests.swift; sourceTree = "<group>"; };
 		657157631E36FAA400391D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		657157681E36FAA400391D4F /* Fishing DaysUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fishing DaysUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6571576C1E36FAA400391D4F /* Fishing_DaysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fishing_DaysUITests.swift; sourceTree = "<group>"; };
 		6571576E1E36FAA400391D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6571577A1E36FD0F00391D4F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -125,6 +103,7 @@
 		65DC00011EE6A8BF00AD682F /* WeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
 		65DC00031EE6BE0600AD682F /* MonthYearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthYearViewController.swift; sourceTree = "<group>"; };
 		65DC00051EE6BFB100AD682F /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
+		65E996701EE8724F002A3262 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		65F26A6E1EE41A1400C669B9 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		65F26A701EE42B6B00C669B9 /* ManualMatchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualMatchController.swift; sourceTree = "<group>"; };
 		7EEBF0D7645B5058B0308653 /* Pods_Fishing_Days.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fishing_Days.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,20 +118,6 @@
 				658285A61EE3AB6900A916FC /* Realm.framework in Frameworks */,
 				A29DA8F4F9853F65741DE5BD /* Pods_Fishing_Days.framework in Frameworks */,
 				658285A81EE3AB6900A916FC /* RealmSwift.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6571575A1E36FAA400391D4F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		657157651E36FAA400391D4F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,13 +144,13 @@
 		651E8A501ED6F36E0005B874 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				65239D3B1ED8497D00842A1F /* ButtonView.swift */,
 				656408561EDC39AA00D9ECBC /* GeneralCollectionCell.swift */,
 				651E8A511ED6F3910005B874 /* FunctionCell.swift */,
-				65239D3B1ED8497D00842A1F /* ButtonView.swift */,
+				65164AA61EDB3C710014129E /* FunctionButton.swift */,
 				65331C7D1E9003E9004EE184 /* RadioBox.swift */,
 				6564085A1EDC605300D9ECBC /* SettingCell.swift */,
 				655090C21EE5114A007845F7 /* NotificationCell.swift */,
-				65164AA61EDB3C710014129E /* FunctionButton.swift */,
 				65239D3F1ED884D100842A1F /* DayCell.swift */,
 			);
 			name = View;
@@ -207,18 +172,18 @@
 			isa = PBXGroup;
 			children = (
 				65B2A0AF1EE714250053BFD8 /* Segue */,
-				65331C7B1E8D34D4004EE184 /* SignupController.swift */,
-				6564085E1EDD537B00D9ECBC /* NotificationViewController.swift */,
-				651E8A571ED705FE0005B874 /* DashboardController.swift */,
-				65B2A0B91EE7F7630053BFD8 /* SettingController.swift */,
-				65CC73621EDDDFB500BA4E9A /* NewReminderController.swift */,
 				65239D371ED8322B00842A1F /* AboutUsController.swift */,
-				65DC00011EE6A8BF00AD682F /* WeekViewController.swift */,
-				65DC00031EE6BE0600AD682F /* MonthYearViewController.swift */,
+				651E8A571ED705FE0005B874 /* DashboardController.swift */,
 				65DC00051EE6BFB100AD682F /* DayViewController.swift */,
-				6549887A1E65E4B900FBFB8C /* FirstPageController.swift */,
 				65F26A6E1EE41A1400C669B9 /* DateViewController.swift */,
+				6549887A1E65E4B900FBFB8C /* FirstPageController.swift */,
+				65DC00031EE6BE0600AD682F /* MonthYearViewController.swift */,
 				65F26A701EE42B6B00C669B9 /* ManualMatchController.swift */,
+				65E996701EE8724F002A3262 /* NotificationViewController.swift */,
+				65CC73621EDDDFB500BA4E9A /* NewReminderController.swift */,
+				65B2A0B91EE7F7630053BFD8 /* SettingController.swift */,
+				65331C7B1E8D34D4004EE184 /* SignupController.swift */,
+				65DC00011EE6A8BF00AD682F /* WeekViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -241,8 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				657157491E36FAA400391D4F /* BeTouched.app */,
-				6571575D1E36FAA400391D4F /* Fishing DaysTests.xctest */,
-				657157681E36FAA400391D4F /* Fishing DaysUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -325,42 +288,6 @@
 			productReference = 657157491E36FAA400391D4F /* BeTouched.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6571575C1E36FAA400391D4F /* Fishing DaysTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 657157741E36FAA400391D4F /* Build configuration list for PBXNativeTarget "Fishing DaysTests" */;
-			buildPhases = (
-				657157591E36FAA400391D4F /* Sources */,
-				6571575A1E36FAA400391D4F /* Frameworks */,
-				6571575B1E36FAA400391D4F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6571575F1E36FAA400391D4F /* PBXTargetDependency */,
-			);
-			name = "Fishing DaysTests";
-			productName = "Fishing DaysTests";
-			productReference = 6571575D1E36FAA400391D4F /* Fishing DaysTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		657157671E36FAA400391D4F /* Fishing DaysUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 657157771E36FAA400391D4F /* Build configuration list for PBXNativeTarget "Fishing DaysUITests" */;
-			buildPhases = (
-				657157641E36FAA400391D4F /* Sources */,
-				657157651E36FAA400391D4F /* Frameworks */,
-				657157661E36FAA400391D4F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6571576A1E36FAA400391D4F /* PBXTargetDependency */,
-			);
-			name = "Fishing DaysUITests";
-			productName = "Fishing DaysUITests";
-			productReference = 657157681E36FAA400391D4F /* Fishing DaysUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -380,16 +307,6 @@
 							};
 						};
 					};
-					6571575C1E36FAA400391D4F = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 657157481E36FAA400391D4F;
-					};
-					657157671E36FAA400391D4F = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 657157481E36FAA400391D4F;
-					};
 				};
 			};
 			buildConfigurationList = 657157441E36FAA400391D4F /* Build configuration list for PBXProject "Fishing Days" */;
@@ -406,8 +323,6 @@
 			projectRoot = "";
 			targets = (
 				657157481E36FAA400391D4F /* BeTouched */,
-				6571575C1E36FAA400391D4F /* Fishing DaysTests */,
-				657157671E36FAA400391D4F /* Fishing DaysUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -420,20 +335,6 @@
 				657157571E36FAA400391D4F /* LaunchScreen.storyboard in Resources */,
 				657157541E36FAA400391D4F /* Assets.xcassets in Resources */,
 				657157521E36FAA400391D4F /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6571575B1E36FAA400391D4F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		657157661E36FAA400391D4F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,12 +426,12 @@
 				65239D3C1ED8497D00842A1F /* ButtonView.swift in Sources */,
 				65DC00041EE6BE0600AD682F /* MonthYearViewController.swift in Sources */,
 				655090C11EE50F94007845F7 /* Profile.swift in Sources */,
+				65E996711EE8724F002A3262 /* NotificationViewController.swift in Sources */,
 				656408611EDD53DE00D9ECBC /* Notification.swift in Sources */,
 				65164AA71EDB3C710014129E /* FunctionButton.swift in Sources */,
 				656408571EDC39AA00D9ECBC /* GeneralCollectionCell.swift in Sources */,
 				65B2A0B11EE714480053BFD8 /* RightSegue.swift in Sources */,
 				65DC00061EE6BFB100AD682F /* DayViewController.swift in Sources */,
-				6564085F1EDD537B00D9ECBC /* NotificationViewController.swift in Sources */,
 				65239D381ED8322B00842A1F /* AboutUsController.swift in Sources */,
 				6571577B1E36FD0F00391D4F /* Day.swift in Sources */,
 				65B2A0B61EE727620053BFD8 /* Status.swift in Sources */,
@@ -538,36 +439,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		657157591E36FAA400391D4F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				657157621E36FAA400391D4F /* Fishing_DaysTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		657157641E36FAA400391D4F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6571576D1E36FAA400391D4F /* Fishing_DaysUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6571575F1E36FAA400391D4F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 657157481E36FAA400391D4F /* BeTouched */;
-			targetProxy = 6571575E1E36FAA400391D4F /* PBXContainerItemProxy */;
-		};
-		6571576A1E36FAA400391D4F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 657157481E36FAA400391D4F /* BeTouched */;
-			targetProxy = 657157691E36FAA400391D4F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		657157501E36FAA400391D4F /* Main.storyboard */ = {
@@ -610,9 +482,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jianming Zhou (9UX5473SJB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jianming Zhou (9UX5473SJB)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AQ934CZ8Q4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -632,6 +506,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=*]" = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -660,9 +535,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jianming Zhou (9UX5473SJB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jianming Zhou (9UX5473SJB)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AQ934CZ8Q4;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -675,6 +552,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=*]" = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
@@ -699,6 +577,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jerrychou.fish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -720,67 +600,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jerrychou.fish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		657157751E36FAA400391D4F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = AQ934CZ8Q4;
-				FRAMEWORK_SEARCH_PATHS = "/Users/JerryChou/Documents/App/Dailylife-with-a-fish";
-				INFOPLIST_FILE = "Fishing DaysTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jerry-Chou.Fishing-DaysTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fishing Days.app/Fishing Days";
-			};
-			name = Debug;
-		};
-		657157761E36FAA400391D4F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = AQ934CZ8Q4;
-				FRAMEWORK_SEARCH_PATHS = "/Users/JerryChou/Documents/App/Dailylife-with-a-fish";
-				INFOPLIST_FILE = "Fishing DaysTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jerry-Chou.Fishing-DaysTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fishing Days.app/Fishing Days";
-			};
-			name = Release;
-		};
-		657157781E36FAA400391D4F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = AQ934CZ8Q4;
-				INFOPLIST_FILE = "Fishing DaysUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jerry-Chou.Fishing-DaysUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = "Fishing Days";
-			};
-			name = Debug;
-		};
-		657157791E36FAA400391D4F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = AQ934CZ8Q4;
-				INFOPLIST_FILE = "Fishing DaysUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jerry-Chou.Fishing-DaysUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = "Fishing Days";
 			};
 			name = Release;
 		};
@@ -801,24 +622,6 @@
 			buildConfigurations = (
 				657157721E36FAA400391D4F /* Debug */,
 				657157731E36FAA400391D4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		657157741E36FAA400391D4F /* Build configuration list for PBXNativeTarget "Fishing DaysTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				657157751E36FAA400391D4F /* Debug */,
-				657157761E36FAA400391D4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		657157771E36FAA400391D4F /* Build configuration list for PBXNativeTarget "Fishing DaysUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				657157781E36FAA400391D4F /* Debug */,
-				657157791E36FAA400391D4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

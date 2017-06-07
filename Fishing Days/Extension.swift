@@ -108,7 +108,7 @@ extension UIViewController {
         view.endEditing(true)
     }
     
-    func NoConnection(message: String) {
+    func ErrorAlert(message: String) {
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: "Alright", style: .default, handler: nil)

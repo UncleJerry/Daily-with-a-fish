@@ -23,6 +23,7 @@ class Day {
         
         // Build that moment
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
         let dateWithFormat = dateString + " 00:00:00"
         let thatMoment = dateFormatter.date(from: dateWithFormat)
         thatDay = thatMoment

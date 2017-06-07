@@ -39,13 +39,7 @@ class NewReminderController: UIViewController, UIPickerViewDelegate, UIPickerVie
     var selectedModel = 0
     var detail: String? 
     
-    @IBAction func ValueChanged(_ sender: UITextField) {
-        if !(DetailField.text?.isEmpty)! {
-            NextButton.isEnabled = true
-        }else{
-            NextButton.isEnabled = false
-        }
-    }
+    
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -56,8 +50,8 @@ class NewReminderController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return pickerData.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedModel = row
     }
     
     
@@ -68,6 +62,13 @@ class NewReminderController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     @IBAction func GotoNext(_ sender: UIButton) {
+        if (DetailField.text?.isEmpty)! {
+            ErrorAlert(message: "Please fill the notification detail.")
+            return
+        }
+        
+        
+        print(selectedModel)
         
         if selectedModel == 1 {
             self.performSegue(withIdentifier: "DayMode", sender: nil)

@@ -52,7 +52,12 @@ class SignupController: UIViewController {
         connected = NetworkReachabilityManager(host: "https://jerrypho.club:3223/")?.isReachable
         
         if !connected! {
-            NoConnection(message: "Seems like you lose the network connection, please try later.")
+            ErrorAlert(message: "Seems like you lose the network connection, please try later.")
+        }
+        
+        if (FirstNLabel.text?.isEmpty)! || (LastNLabel.text?.isEmpty)! {
+            ErrorAlert(message: "Please fill all fields.")
+            return
         }
         
         let profile = Profile()
@@ -70,10 +75,21 @@ class SignupController: UIViewController {
             switch response.result {
             case .success:
                 self.performSegue(withIdentifier: "GoToMatch", sender: nil)
-            case .failure(let error):
-                print(error)
+            case .failure:
+                self.ErrorAlert(message: "Network is not functioning.")
             }
         }
     }
 
+    @IBAction func Back(_ sender: UIButton) {
+        let status = realm.objects(Status.self)[0]
+        try! realm.write {
+            status.logged = false
+        }
+        
+        Alamofire.request("https://jerrypho.club:3223/logout", method: .get).responseJSON { response in
+            
+            
+        }
+    }
 }

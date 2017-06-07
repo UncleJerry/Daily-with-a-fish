@@ -55,8 +55,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // Notification
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
-        //let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
-        //print(deviceTokenString)
+        
+        let status = realm.objects(Status.self)
+        if status.count == 0 {
+            
+            let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+            let newstatus = Status()
+            newstatus.deviceid = deviceTokenString
+            
+            try! realm.write {
+                realm.add(newstatus)
+            }
+        }
+        
         
         
     }

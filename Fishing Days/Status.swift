@@ -13,5 +13,7 @@ class Status: Object {
     dynamic var logged = false
     dynamic var signupView = ""
     dynamic var meetErrorWhenSignUp = false
+    dynamic var deviceid = ""
+    dynamic var registered = false
 }
 
