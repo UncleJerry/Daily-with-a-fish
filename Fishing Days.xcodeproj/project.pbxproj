@@ -44,6 +44,7 @@
 		65E996711EE8724F002A3262 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E996701EE8724F002A3262 /* NotificationViewController.swift */; };
 		65F26A6F1EE41A1400C669B9 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F26A6E1EE41A1400C669B9 /* DateViewController.swift */; };
 		65F26A711EE42B6B00C669B9 /* ManualMatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F26A701EE42B6B00C669B9 /* ManualMatchController.swift */; };
+		861D4E8D15618B3172A8DB43 /* Pods_BeTouched.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3788928902013F15AD3EDD01 /* Pods_BeTouched.framework */; };
 		A29DA8F4F9853F65741DE5BD /* Pods_Fishing_Days.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEBF0D7645B5058B0308653 /* Pods_Fishing_Days.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0494919893481BA47E5D77CD /* Pods-BeTouched.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeTouched.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeTouched/Pods-BeTouched.release.xcconfig"; sourceTree = "<group>"; };
+		3788928902013F15AD3EDD01 /* Pods_BeTouched.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeTouched.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		485B5B5F74D30EB0CC8D247F /* Pods-Fishing Days.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fishing Days.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fishing Days/Pods-Fishing Days.debug.xcconfig"; sourceTree = "<group>"; };
 		65164AA61EDB3C710014129E /* FunctionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionButton.swift; sourceTree = "<group>"; };
 		651E8A511ED6F3910005B874 /* FunctionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionCell.swift; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		65F26A701EE42B6B00C669B9 /* ManualMatchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualMatchController.swift; sourceTree = "<group>"; };
 		7EEBF0D7645B5058B0308653 /* Pods_Fishing_Days.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fishing_Days.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		839AA29F1D7999B8F4B91273 /* Pods-Fishing Days.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fishing Days.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fishing Days/Pods-Fishing Days.release.xcconfig"; sourceTree = "<group>"; };
+		DF010146F20B5FED1B0E157A /* Pods-BeTouched.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeTouched.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeTouched/Pods-BeTouched.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 				658285A61EE3AB6900A916FC /* Realm.framework in Frameworks */,
 				A29DA8F4F9853F65741DE5BD /* Pods_Fishing_Days.framework in Frameworks */,
 				658285A81EE3AB6900A916FC /* RealmSwift.framework in Frameworks */,
+				861D4E8D15618B3172A8DB43 /* Pods_BeTouched.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				7EEBF0D7645B5058B0308653 /* Pods_Fishing_Days.framework */,
+				3788928902013F15AD3EDD01 /* Pods_BeTouched.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,6 +143,8 @@
 			children = (
 				485B5B5F74D30EB0CC8D247F /* Pods-Fishing Days.debug.xcconfig */,
 				839AA29F1D7999B8F4B91273 /* Pods-Fishing Days.release.xcconfig */,
+				DF010146F20B5FED1B0E157A /* Pods-BeTouched.debug.xcconfig */,
+				0494919893481BA47E5D77CD /* Pods-BeTouched.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -353,7 +361,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fishing Days/Pods-Fishing Days-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeTouched/Pods-BeTouched-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4C422D63A1ABD7A0B3894BAC /* [CP] Check Pods Manifest.lock */ = {
@@ -396,7 +404,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fishing Days/Pods-Fishing Days-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeTouched/Pods-BeTouched-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -562,7 +570,7 @@
 		};
 		657157721E36FAA400391D4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 485B5B5F74D30EB0CC8D247F /* Pods-Fishing Days.debug.xcconfig */;
+			baseConfigurationReference = DF010146F20B5FED1B0E157A /* Pods-BeTouched.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Fishing Days/Fishing Days.entitlements";
@@ -585,7 +593,7 @@
 		};
 		657157731E36FAA400391D4F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 839AA29F1D7999B8F4B91273 /* Pods-Fishing Days.release.xcconfig */;
+			baseConfigurationReference = 0494919893481BA47E5D77CD /* Pods-BeTouched.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Fishing Days/Fishing Days.entitlements";

@@ -33,7 +33,6 @@ class DashboardController: UIViewController {
                 let json = JSON(response.value!)
                 
                 if json["status"].stringValue == "registered"{
-                    print("success")
                     try! realm.write {
                         status.registered = true
                     }

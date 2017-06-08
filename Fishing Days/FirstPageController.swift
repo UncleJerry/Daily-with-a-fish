@@ -112,8 +112,19 @@ class FirstPageController: UIViewController {
                 switch response.result {
                 case .success:
                     let json = JSON(response.value!)
-                    
+                    if json["status"].stringValue == "failed"{
+                        self.ErrorAlert(message: "Wrong email or password")
+                        return 
+                    }
                     let status = realm.objects(Status.self)
+                    
+                    if status.count == 0{
+                        let newStatus = Status()
+                        try! realm.write {
+                            realm.add(newStatus)
+                        }
+                    }
+                    
                     try! realm.write {
                         status[0].logged = true
                     }

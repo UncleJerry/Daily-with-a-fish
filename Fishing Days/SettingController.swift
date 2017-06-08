@@ -68,16 +68,27 @@ class SettingController: UIViewController, MFMailComposeViewControllerDelegate {
             
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
                 
+                let notifications = realm.objects(Notifications.self)
+                
+                if notifications.count != 0{
+                    try! realm.write {
+                        realm.delete(notifications)
+                    }
+                }
+                
                 let status = realm.objects(Status.self)[0]
                 try! realm.write {
                     status.logged = false
                 }
                 
                 
+                
                 let profile = realm.objects(Profile.self)
                 try! realm.write {
                     realm.delete(profile)
                 }
+                
+                
                 
                 
                 Alamofire.request("https://jerrypho.club:3223/logout", method: .get).responseJSON { response in
