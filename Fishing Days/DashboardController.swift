@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import Alamofire
+import SwiftyJSON
 
 class DashboardController: UIViewController {
 
@@ -26,16 +27,16 @@ class DashboardController: UIViewController {
         
         if !status.registered {
             let parameter: Parameters = ["deviceid": status.deviceid]
-            Alamofire.request("https://jerrypho.club:3223/Add_device",method: .post, parameters: parameter).validate(statusCode: 200...202).responseJSON { response in
-                switch response.result {
-                case .success:
-                    
+            
+            
+            Alamofire.request("https://jerrypho.club:3223/Add_device", method: .post, parameters: parameter).responseJSON { response in
+                let json = JSON(response.value!)
+                
+                if json["status"].stringValue == "registered"{
+                    print("success")
                     try! realm.write {
                         status.registered = true
                     }
-                    
-                case .failure:
-                    self.ErrorAlert(message: "Network is not functioning.")
                 }
             }
         }

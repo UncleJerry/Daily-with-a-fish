@@ -73,19 +73,19 @@ class SettingController: UIViewController, MFMailComposeViewControllerDelegate {
                     status.logged = false
                 }
                 
-                print("1")
+                
                 let profile = realm.objects(Profile.self)
                 try! realm.write {
                     realm.delete(profile)
                 }
                 
-                print("2")
+                
                 Alamofire.request("https://jerrypho.club:3223/logout", method: .get).responseJSON { response in
                     _ = JSON(response.value!)
                     
                     
                 }
-                print("3")
+                
                 self.performSegue(withIdentifier: "Logout", sender: nil)
             }))
             alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
