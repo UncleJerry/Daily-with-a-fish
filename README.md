@@ -20,6 +20,10 @@ A project works on developing an iOS app with functions target at couple communi
 2. Cooperate with ex-girlfriend who was major in art design.
 	Her is response for drawing the icon (under my command and supervision )
 	
+## Screenshot
+
+![screenshot](/screenshot.png)	
+	
 ## If you have interest in back-end part
 
 Please refer to another repository in my page named [Fish-pool](https://github.com/UncleJerry/Fish-pool)
