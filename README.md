@@ -1,13 +1,13 @@
 # Daily-with-a-fish
 
-A project works on developing an iOS app with functions target at couple communication and setting reminders for memories. 
+An iOS app for couple communication, chatting and setting reminders for anniversary. 
 
 
 ## Aiming of this project
 
 1. Firstly, practice my Swift language coding and the design skills:
 
-	The following part has been practiced:
+	The following concepts have been practiced:
 	
 	- Date class
 	- Notification
@@ -15,10 +15,10 @@ A project works on developing an iOS app with functions target at couple communi
 		- JSON handling 
 		- Log-in and sign up (with consideration of security)
 	- CollectionView
-	- Database by Realm
+	- Database (Realm)
 
 2. Cooperate with ex-girlfriend who was major in art design.
-	Her is response for drawing the icon (under my command and supervision )
+	She responded for drawing the icon (under my command and supervision )
 	
 ## Screenshot
 
